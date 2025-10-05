@@ -7,8 +7,8 @@ const container = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3,
-      delayChildren: 1.5,
+      staggerChildren: 0.12,
+      delayChildren: 0.2,
     },
   },
 };
@@ -19,11 +19,13 @@ const ProjectList = ({ projects }) => {
       variants={container}
       initial="hidden"
       animate="show"
-      className="w-full max-w-auto  xl:max-w-4xl px-4 mx-auto lg:px-16 space-y-6 md:space-y-8 flex flex-col items-center"
+      className="w-full max-w-7xl px-4 mx-auto lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
     >
-      {projects.map((project, index) => {
-        return <ProjectLayout key={index} {...project} />;
-      })}
+      {projects.map((project, index) => (
+        <div key={index} className={index === 0 ? "md:col-span-2" : ""}>
+          <ProjectLayout {...project} featured={index === 0} />
+        </div>
+      ))}
     </motion.div>
   );
 };
