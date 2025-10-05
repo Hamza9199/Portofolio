@@ -1,4 +1,4 @@
-# Next.js Creative Portfolio 🎨
+# Portfolio 🎨
 
 A stunning and interactive creative portfolio built with Next.js, React Three Fiber, and Framer Motion. Showcases projects and skills with engaging 3D models and animations.
 
