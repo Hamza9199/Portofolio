@@ -1,4 +1,3 @@
-
 export const projectsData = [
   {
     id: 1,
@@ -66,34 +65,14 @@ export const projectsData = [
 ];
 
 export const BtnList = [
-  { label: "Home", link: "/", icon: "home", newTab: false },
-  { label: "About", link: "/about", icon: "about", newTab: false },
-  { label: "Projects", link: "/projects", icon: "projects", newTab: false },
-  { label: "Contact", link: "/contact", icon: "contact", newTab: false },
-  {
-    label: "Github",
-    link: "https://github.com/Hamza9199",
-    icon: "github",
-    newTab: true,
-  },
-  {
-    label: "LinkedIn",
-    link: "https://www.linkedin.com/in/hamza-gacic-dev/",
-    icon: "linkedin",
-    newTab: true,
-  },
-  {
-    label: "Instagram",
-    link: "https://www.instagram.com/hamza.1_____",
-    icon: "instagram",
-    newTab: true,
-  },
-  {
-    label: "Resume",
-    link: "/resume.pdf",
-    icon: "resume",
-    newTab: true,
-  },
+  { label: "Home", i18nKey: "nav.home", link: "/", icon: "home", newTab: false },
+  { label: "About", i18nKey: "nav.about", link: "/about", icon: "about", newTab: false },
+  { label: "Projects", i18nKey: "nav.projects", link: "/projects", icon: "projects", newTab: false },
+  { label: "Contact", i18nKey: "nav.contact", link: "/contact", icon: "contact", newTab: false },
+  { label: "Github", i18nKey: "nav.github", link: "https://github.com/Hamza9199", icon: "github", newTab: true },
+  { label: "LinkedIn", i18nKey: "nav.linkedin", link: "https://www.linkedin.com/in/hamza-gacic-dev/", icon: "linkedin", newTab: true },
+  { label: "Instagram", i18nKey: "nav.instagram", link: "https://www.instagram.com/hamza.1_____", icon: "instagram", newTab: true },
+  { label: "Resume", i18nKey: "nav.resume", link: "/resume.pdf", icon: "resume", newTab: true },
 ];
 
 
