@@ -162,3 +162,65 @@ If you have any questions or suggestions, please feel free to contact me at [ham
 ## 💖 Thanks
 
 Thank you for checking out my creative portfolio! I hope you find it inspiring and helpful.
+
+[![BS](https://img.shields.io/badge/lang-BS-blue)](#bosanski) [![EN](https://img.shields.io/badge/lang-EN-green)](#english) [![DE](https://img.shields.io/badge/lang-DE-yellow)](#deutsch)
+
+## Bosanski
+
+Interaktivan portfolio napravljen u Next.js sa React Three Fiber i Framer Motion. Prikazuje projekte i vještine uz 3D modele, animacije i i18n (bosanski/engleski/njemački).
+
+Ključne funkcije
+- 3D modeli (React Three Fiber) i glatke animacije (Framer Motion)
+- Responsivan dizajn (useScreenSize hook)
+- Kontakt forma (react-hook-form, emailjs – demo)
+- Stranice: Početna, O meni, Projekti, Kontakt
+- i18n: BS/EN/DE jezički izbor
+- Optimizirane slike (next/image), pozadinski zvuk i Fireflies efekat
+
+Tehnologije
+- Next.js, React, React Three Fiber, drei, Framer Motion
+- Three.js, Tailwind CSS, PostCSS, Autoprefixer
+- ESLint, eslint-config-next, Sharp
+
+Pokretanje
+- Instalacija: npm install
+- Dev: npm run dev (http://localhost:3000)
+- Build/Start: npm run build && npm start
+
+Struktura (sažetak)
+- public/background, public/models, public/audio
+- src/app: (sub pages), i18n/dict.js, data.js, layout.js, page.js
+- src/components: about, contact, models, navigation, projects, FireFliesBackground.jsx, RenderModel.jsx, Sound.jsx
+
+Licenca i kontakt
+- MIT licenca. Pitanja: hamza.gacic.22@size.ba
+
+## Deutsch
+
+Interaktives Portfolio mit Next.js, React Three Fiber und Framer Motion. Zeigt Projekte und Fähigkeiten mit 3D‑Modellen, Animationen und i18n (Bosnisch/Englisch/Deutsch).
+
+Funktionen
+- 3D‑Modelle (React Three Fiber) und flüssige Animationen (Framer Motion)
+- Responsives Design (useScreenSize Hook)
+- Kontaktformular (react-hook-form, emailjs – Demo)
+- Seiten: Start, Über mich, Projekte, Kontakt
+- i18n: BS/EN/DE Sprachauswahl
+- Optimierte Bilder (next/image), Hintergrundaudio, Fireflies‑Effekt
+
+Tech‑Stack
+- Next.js, React, React Three Fiber, drei, Framer Motion
+- Three.js, Tailwind CSS, PostCSS, Autoprefixer
+- ESLint, eslint-config-next, Sharp
+
+Lokales Starten
+- Installation: npm install
+- Entwicklung: npm run dev (http://localhost:3000)
+- Produktion: npm run build && npm start
+
+Struktur (kurz)
+- public/background, public/models, public/audio
+- src/app: (sub pages), i18n/dict.js, data.js, layout.js, page.js
+- src/components: about, contact, models, navigation, projects, FireFliesBackground.jsx, RenderModel.jsx, Sound.jsx
+
+Lizenz und Kontakt
+- MIT‑Lizenz. Fragen: hamza.gacic.22@size.ba
