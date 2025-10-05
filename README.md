@@ -1,4 +1,4 @@
-# Portfolio 🎨
+# Next.js Creative Portfolio 🎨
 
 A stunning and interactive creative portfolio built with Next.js, React Three Fiber, and Framer Motion. Showcases projects and skills with engaging 3D models and animations.
 
@@ -59,13 +59,13 @@ This portfolio is designed to be visually appealing and user-friendly, providing
 1.  Clone the repository:
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/Hamza9199/Portofolio
     ```
 
 2.  Navigate to the project directory:
 
     ```bash
-    cd nextjs-creative-portfolio
+    cd portfolio
     ```
 
 3.  Install dependencies:
@@ -148,11 +148,8 @@ nextjs-creative-portfolio/
 
 ## 📸 Screenshots
 
-(Add screenshots of your portfolio here to showcase its visual appeal and functionality)
+(Will be added)
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit pull requests with bug fixes, new features, or improvements to the documentation.
 
 ## 📝 License
 
@@ -160,10 +157,8 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 📬 Contact
 
-If you have any questions or suggestions, please feel free to contact me at [your-email@example.com](mailto:your-email@example.com).
+If you have any questions or suggestions, please feel free to contact me at [hamza.gacic.22@size.ba](mailto:hamza.gacic.22@size.ba).
 
 ## 💖 Thanks
 
 Thank you for checking out my creative portfolio! I hope you find it inspiring and helpful.
-
-This is written by [readme.ai](https://readme-generator-phi.vercel.app/).
