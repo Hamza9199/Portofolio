@@ -43,7 +43,7 @@ This portfolio is designed to be visually appealing and user-friendly, providing
 *   **Internationalization:**
     *   Custom dictionary (`src/app/i18n/dict.js`): For storing translations.
 *   **Email:**
-    *   [@emailjs/browser](https://www.emailjs.com/): Used for sending emails directly from the browser (currently demo mode).
+    *   [@emailjs/browser](https://www.emailjs.com/): Used for sending emails directly from the browser.
 *   **Image Processing:**
     *   [Sharp](https://sharp.pixelplumbing.com/): High-performance image processing library.
 *   **Linting:**
