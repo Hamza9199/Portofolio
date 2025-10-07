@@ -9,17 +9,11 @@ const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-      delayChildren: 0.2,
-    },
+    transition: { staggerChildren: 0.3, delayChildren: 0.2 },
   },
 };
 
-const item = {
-  hidden: { scale: 0 },
-  show: { scale: 1 },
-};
+const item = { hidden: { scale: 0 }, show: { scale: 1 } };
 
 export default function Form() {
   const {
@@ -42,20 +36,32 @@ export default function Form() {
         ownerParams,
         options
       );
+    } catch (err) {
+      console.error("Owner notification send failed:", err);
+      toast.error(
+        "There was an error sending your message, please try again later!",
+        { id: toastId }
+      );
+      return;
+    }
 
-      if (process.env.NEXT_PUBLIC_AUTOREPLY_TEMPLATE_ID) {
+    if (process.env.NEXT_PUBLIC_AUTOREPLY_TEMPLATE_ID) {
+      try {
         await emailjs.send(
           process.env.NEXT_PUBLIC_SERVICE_ID,
           process.env.NEXT_PUBLIC_AUTOREPLY_TEMPLATE_ID,
           userParams,
           options
         );
+      } catch (err) {
+        console.error("Auto-reply send failed:", err);
       }
-
-      toast.success("I have received your message, I will get back to you soon!", { id: toastId });
-    } catch (_) {
-      toast.error("There was an error sending your message, please try again later!", { id: toastId });
     }
+
+    toast.success(
+      "I have received your message, I will get back to you soon!",
+      { id: toastId }
+    );
   };
 
   const onSubmit = (data) => {
@@ -71,6 +77,9 @@ export default function Form() {
       from_name: data.name,
       reply_to: data.email,
       message: data.message,
+      to_email: process.env.NEXT_PUBLIC_TO_EMAIL,
+      user_email: data.email,
+      to_name: data.name,
     };
 
     sendEmail(ownerParams, userParams);
