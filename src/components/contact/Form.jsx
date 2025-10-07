@@ -22,6 +22,9 @@ export default function Form() {
     formState: { errors },
   } = useForm();
 
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+  // Send primary notification to owner, then try auto-reply to user
   const sendEmail = async (ownerParams, userParams) => {
     const toastId = toast.loading("Sending your message, please wait...");
     const options = {
@@ -45,8 +48,11 @@ export default function Form() {
       return;
     }
 
+    // Auto-reply (non-blocking-ish): respect EmailJS throttle to avoid 429
     if (process.env.NEXT_PUBLIC_AUTOREPLY_TEMPLATE_ID) {
       try {
+        // wait >5s to satisfy throttle/rate limit before second send
+        await sleep(6000);
         await emailjs.send(
           process.env.NEXT_PUBLIC_SERVICE_ID,
           process.env.NEXT_PUBLIC_AUTOREPLY_TEMPLATE_ID,
@@ -55,6 +61,19 @@ export default function Form() {
         );
       } catch (err) {
         console.error("Auto-reply send failed:", err);
+        if (err && err.status === 429) {
+          try {
+            await sleep(7000);
+            await emailjs.send(
+              process.env.NEXT_PUBLIC_SERVICE_ID,
+              process.env.NEXT_PUBLIC_AUTOREPLY_TEMPLATE_ID,
+              userParams,
+              options
+            );
+          } catch (err2) {
+            console.error("Auto-reply retry failed:", err2);
+          }
+        }
       }
     }
 
