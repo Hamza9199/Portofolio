@@ -17,7 +17,7 @@ const HomeBtn = () => {
         "
       aria-label={"home"}
       name={"home"}
-      prefetch={false}
+      prefetch={true}
     >
       <span className="relative  w-14 h-14 p-4  hover:text-accent">
         <Home className="w-full h-auto" strokeWidth={1.5} />

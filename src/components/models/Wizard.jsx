@@ -43,8 +43,9 @@ const Wizard = React.memo(function Wizard(props) {
             receiveShadow
             geometry={nodes['RedBull_V2_lp_Material_#25_0'].geometry}
             material={materials.Material_25}
-            position={[0, 0, 0]}
+            position={[-1, 0, 0]}
             rotation={[0, 0, 0]}
+            scale={0.02}
           />
         </group>
       </group>

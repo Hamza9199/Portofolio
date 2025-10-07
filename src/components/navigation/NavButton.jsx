@@ -76,7 +76,7 @@ const NavButton = ({
               className="text-foreground rounded-full flex items-center justify-center custom-bg"
               aria-label={label}
               name={label}
-              prefetch={false}
+              prefetch={true}
               scroll={false}
             >
               <motion.span
@@ -101,7 +101,7 @@ const NavButton = ({
               className="text-foreground rounded-full flex items-center justify-center custom-bg"
               aria-label={label}
               name={label}
-              prefetch={false}
+              prefetch={true}
               scroll={false}
             >
               <motion.span

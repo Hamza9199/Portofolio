@@ -22,8 +22,8 @@ export default function Home() {
         className="-z-50 fixed top-0 left-0 w-full h-full object-cover object-center opacity-50"
       />
 
-      <div className="w-full h-3/5 xs:h-3/4 sm:h-screen absolute top-1/2 -translate-y-1/2 left-0 z-10">
-        <RenderModel>
+      <div className="absolute h-full w-full  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center">
+        <RenderModel fit={false}>
           <HatModel />
         </RenderModel>
       </div>

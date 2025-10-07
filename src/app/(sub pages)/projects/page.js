@@ -3,20 +3,22 @@ import bg from "../../../../public/background/projects-background.png";
 import ProjectList from "@/components/projects";
 import { projectsData } from "../../data";
 import RenderModel from "@/components/RenderModel";
-// import Staff from "@/components/models/Staff";
-import dynamic from "next/dynamic";
-
-const Staff = dynamic(() => import("@/components/models/Staff"), {
-  ssr: false,
-});
+import NextDynamic from "next/dynamic";
+import RefreshOnMount from "@/components/RefreshOnMount";
 
 export const metadata = {
   title: "Projects",
 };
+export const dynamic = "force-dynamic";
+
+const Staff = NextDynamic(() => import("@/components/models/Staff"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
     <>
+      <RefreshOnMount />
       <Image
         src={bg}
         alt="Next.js Portfolio website's about page background image"
@@ -27,8 +29,8 @@ export default function Home() {
 
       <ProjectList projects={projectsData} />
 
-      <div className="flex items-center justify-center fixed  top-16  lg:top-20  -z-10 lg:-left-0 h-screen">
-        <RenderModel>
+      <div className="flex items-center justify-center fixed  top-20  lg:top-20  left:2 -z-10 lg:-left-0 h-screen">
+        <RenderModel fit={false}>
           <Staff />
         </RenderModel>
       </div>

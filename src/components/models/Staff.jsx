@@ -10,7 +10,7 @@ const Staff = React.memo(function Staff(props) {
       return (
     <group {...props} dispose={null}>
       <group name="Sketchfab_Scene">
-        <group name="Sketchfab_model" rotation={[-Math.PI / 5.2, 1.9, 3.3]} scale={8.01}>
+        <group name="Sketchfab_model" rotation={[-Math.PI / 5.2, 1.9, 3.3]} scale={2.01} position={[-0.5,-1,0]}>
           <group name="root">
             <group name="GLTF_SceneRootNode" rotation={[Math.PI / 2, 0, 0]}>
               <group name="Front_Wheels002_0" position={[-0.921, 0.274, 0.909]} scale={2.182}>
