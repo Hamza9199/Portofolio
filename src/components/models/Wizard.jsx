@@ -1,11 +1,9 @@
 "use client";
-import React, { useRef, useEffect, useLayoutEffect } from "react";
+import React, { useEffect  } from "react";
 import { useGLTF } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
 
 const Wizard = React.memo(function Wizard(props) {
   const { nodes, materials } = useGLTF("/models/wizard-transformed.glb");
-  const { size, camera } = useThree();
 
   useEffect(() => {
     Object.values(materials).forEach((m) => {
@@ -33,38 +31,11 @@ const Wizard = React.memo(function Wizard(props) {
     });
   }, [materials]);
 
-  const wrapperRef = useRef();
-  useLayoutEffect(() => {
-    const g = wrapperRef.current;
-    if (!g) return;
 
-    g.rotation.set(0, Math.PI, 0);
-    let y = -5;
-
-    try {
-      if (camera && size) {
-        if (camera.isPerspectiveCamera) {
-          const vFOV = (camera.fov * Math.PI) / 180;
-          const dist = Math.abs(camera.position.z - 0);
-          const worldH = 2 * Math.tan(vFOV / 2) * dist;
-          const perPx = worldH / size.height;
-          y += perPx * 300; // move up by 20px
-        } else if (camera.isOrthographicCamera) {
-          const worldH = Math.abs(camera.top - camera.bottom);
-          const perPx = worldH / size.height;
-          y += perPx * 20;
-        }
-      }
-    } catch {}
-
-    g.position.set(0, y, 0);
-    g.scale.set(0.6, 0.6, 0.6);
-    g.updateWorldMatrix(true, true);
-  }, [size, camera]);
 
   return (
     <group {...props} dispose={null}>
-      <group ref={wrapperRef}>
+      <group >
         <group name="RedBull_V2_lp">
           <mesh
             name="RedBull_V2_lp_Material_#25_0"

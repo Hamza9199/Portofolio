@@ -13,13 +13,20 @@ const RenderModel = ({ children, className }) => {
       camera={{ position: [0, 0.6, 8], fov: 45 }}
     >
       <Suspense fallback={null}>
-        <Bounds fit clip observe margin={1.2}>
+        <Bounds fit clip margin={1.2}>
           <group>{children}</group>
         </Bounds>
       </Suspense>
       <ambientLight intensity={0.6} />
       <Environment preset="dawn" />
-      <OrbitControls makeDefault enableDamping />
+      <OrbitControls
+        makeDefault
+        enabled={false}
+        enableDamping={false}
+        enableZoom={false}
+        enableRotate={false}
+        enablePan={false}
+      />
     </Canvas>
   );
 };

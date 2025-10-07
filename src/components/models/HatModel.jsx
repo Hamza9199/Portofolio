@@ -2,34 +2,11 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
 
 const HatModel = React.memo(function HatModel(props) {
   const { nodes, materials } = useGLTF("/models/hat-transformed.glb");
   const modelRef = useRef();
-  const controls = useThree((state) => state.controls);
-
-  useEffect(() => {
-    if (!controls) return;
-    const prev = {
-      enabled: controls.enabled,
-      enableZoom: 'enableZoom' in controls ? controls.enableZoom : undefined,
-      enableRotate: 'enableRotate' in controls ? controls.enableRotate : undefined,
-      enablePan: 'enablePan' in controls ? controls.enablePan : undefined,
-    };
-    controls.enabled = false;
-    if ('enableZoom' in controls) controls.enableZoom = false;
-    if ('enableRotate' in controls) controls.enableRotate = false;
-    if ('enablePan' in controls) controls.enablePan = false;
-
-    return () => {
-      if (!controls) return;
-      controls.enabled = prev.enabled;
-      if (prev.enableZoom !== undefined) controls.enableZoom = prev.enableZoom;
-      if (prev.enableRotate !== undefined) controls.enableRotate = prev.enableRotate;
-      if (prev.enablePan !== undefined) controls.enablePan = prev.enablePan;
-    };
-  }, [controls]);
+ 
 
   return (
     <group

@@ -1,225 +1,103 @@
 
 "use client";
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { useGLTF } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
 
 const Staff = React.memo(function Staff(props) {
   const { nodes, materials } = useGLTF("/models/staff-transformed.glb");
-  const modelRef = useRef();
-
-    const controls = useThree((state) => state.controls);
-    
-      useEffect(() => {
-        if (controls) {
-          controls.enabled = false;
-          if ("enableZoom" in controls) controls.enableZoom = false;
-          if ("enableRotate" in controls) controls.enableRotate = false;
-          if ("enablePan" in controls) controls.enablePan = false;
-        }
-      }, [controls]);
 
   
-
-    return (
+      return (
     <group {...props} dispose={null}>
-      <group
-        name="������������������001_0"
-        position={[-0.018, 0, -0.004]}
-        rotation={[Math.PI / 2, 0, 0]}>
-        <mesh
-          name="Object_4"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_4.geometry}
-          material={materials.material}
-        />
-        <mesh
-          name="Object_5"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_5.geometry}
-          material={materials.material_1}
-        />
-        <mesh
-          name="Object_6"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_6.geometry}
-          material={materials.material_2}
-        />
+      <group name="Sketchfab_Scene">
+        <group name="Sketchfab_model" rotation={[-Math.PI / 5.2, 1.9, 3.3]} scale={8.01}>
+          <group name="root">
+            <group name="GLTF_SceneRootNode" rotation={[Math.PI / 2, 0, 0]}>
+              <group name="Front_Wheels002_0" position={[-0.921, 0.274, 0.909]} scale={2.182}>
+                <mesh
+                  name="Object_4"
+                  geometry={nodes.Object_4.geometry}
+                  material={materials.FRONT_RIM}
+                />
+                <mesh
+                  name="Object_5"
+                  geometry={nodes.Object_5.geometry}
+                  material={materials.material}
+                />
+                <mesh
+                  name="Object_6"
+                  geometry={nodes.Object_6.geometry}
+                  material={materials['MEDIUM_TYRE.001']}
+                />
+                <mesh
+                  name="Object_7"
+                  geometry={nodes.Object_7.geometry}
+                  material={materials.BRAKES}
+                />
+                <mesh
+                  name="Object_8"
+                  geometry={nodes.Object_8.geometry}
+                  material={materials.SCREW}
+                />
+              </group>
+              <group name="Front_Wheels003_1" position={[-0.921, 0.274, 1.799]} scale={2.182}>
+                <mesh
+                  name="Object_10"
+                  geometry={nodes.Object_10.geometry}
+                  material={materials.FRONT_RIM}
+                />
+                <mesh
+                  name="Object_11"
+                  geometry={nodes.Object_11.geometry}
+                  material={materials.material}
+                />
+                <mesh
+                  name="Object_12"
+                  geometry={nodes.Object_12.geometry}
+                  material={materials.SOFT_TYRE}
+                />
+                <mesh
+                  name="Object_13"
+                  geometry={nodes.Object_13.geometry}
+                  material={materials.BRAKES}
+                />
+                <mesh
+                  name="Object_14"
+                  geometry={nodes.Object_14.geometry}
+                  material={materials.SCREW}
+                />
+              </group>
+              <group name="Front_Wheels004_2" position={[-0.921, 0.274, 0.039]} scale={2.182}>
+                <mesh
+                  name="Object_16"
+                  geometry={nodes.Object_16.geometry}
+                  material={materials.FRONT_RIM}
+                />
+                <mesh
+                  name="Object_17"
+                  geometry={nodes.Object_17.geometry}
+                  material={materials.material}
+                />
+                <mesh
+                  name="Object_18"
+                  geometry={nodes.Object_18.geometry}
+                  material={materials.HARD_TYRE}
+                />
+                <mesh
+                  name="Object_19"
+                  geometry={nodes.Object_19.geometry}
+                  material={materials.BRAKES}
+                />
+                <mesh
+                  name="Object_20"
+                  geometry={nodes.Object_20.geometry}
+                  material={materials.SCREW}
+                />
+              </group>
+            </group>
+          </group>
+        </group>
       </group>
-      <group
-        name="������������������_1"
-        position={[-0.018, 0, -0.004]}
-        rotation={[Math.PI / 2, 0, 0]}>
-        <mesh
-          name="Object_8"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_8.geometry}
-          material={materials.material_3}
-        />
-        <mesh
-          name="Object_9"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_9.geometry}
-          material={materials.material_4}
-        />
-        <mesh
-          name="Object_10"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_10.geometry}
-          material={materials.material_5}
-        />
-      </group>
-      <group
-        name="������������������002_3"
-        position={[-2.047, 0, 2.025]}
-        rotation={[Math.PI / 2, 0, 0]}>
-        <mesh
-          name="Object_14"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_14.geometry}
-          material={materials.material_3}
-        />
-        <mesh
-          name="Object_15"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_15.geometry}
-          material={materials.material_4}
-        />
-        <mesh
-          name="Object_16"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_16.geometry}
-          material={materials.material_5}
-        />
-      </group>
-      <group
-        name="��������������������_5"
-        position={[-2.047, 0, 2.025]}
-        rotation={[Math.PI / 2, 0, 0]}>
-        <mesh
-          name="Object_20"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_20.geometry}
-          material={materials.material}
-        />
-        <mesh
-          name="Object_21"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_21.geometry}
-          material={materials.material_1}
-        />
-        <mesh
-          name="Object_22"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_22.geometry}
-          material={materials.material_2}
-        />
-      </group>
-      <group
-        name="��������������������011_7"
-        position={[2.125, 0, -2.091]}
-        rotation={[Math.PI / 2, 0, 0]}>
-        <mesh
-          name="Object_26"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_26.geometry}
-          material={materials['V1.001']}
-        />
-        <mesh
-          name="Object_27"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_27.geometry}
-          material={materials['VV.001']}
-        />
-        <mesh
-          name="Object_28"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_28.geometry}
-          material={materials['B.002']}
-        />
-        <mesh
-          name="Object_29"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_29.geometry}
-          material={materials['W.002']}
-        />
-        <mesh
-          name="Object_30"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_30.geometry}
-          material={materials.material}
-        />
-      </group>
-      <group
-        name="������������������003_8"
-        position={[2.022, 0, -2.091]}
-        rotation={[Math.PI / 2, 0, 0]}>
-        <mesh
-          name="Object_32"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_32.geometry}
-          material={materials['R.001']}
-        />
-        <mesh
-          name="Object_33"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_33.geometry}
-          material={materials['B.002']}
-        />
-        <mesh
-          name="Object_34"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_34.geometry}
-          material={materials['BRE.001']}
-        />
-      </group>
-      <mesh
-        name="Object_12"
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_12.geometry}
-        material={materials.material_2}
-        position={[-0.018, 0, -0.004]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        name="Object_18"
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_18.geometry}
-        material={materials.material_2}
-        position={[-2.047, 0, 2.025]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        name="Object_24"
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_24.geometry}
-        material={materials['W.002']}
-        position={[2.022, 0, -2.091]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
     </group>
   )
 });
