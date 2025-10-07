@@ -23,44 +23,42 @@ export default function Form() {
   } = useForm();
 
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-  const validationEndpoint = process.env.NEXT_PUBLIC_EMAIL_VALIDATION_ENDPOINT;
-  const validationKey = process.env.NEXT_PUBLIC_EMAIL_VALIDATION_KEY;
 
   const validateEmail = async (email) => {
-    if (!validationEndpoint || !validationKey) return true;
-    try {
-      const response = await fetch(
-        `${validationEndpoint}?api_key=${encodeURIComponent(validationKey)}&email=${encodeURIComponent(email)}`
-      );
-      if (!response.ok) throw new Error(`Validation failed: ${response.status}`);
-      const payload = await response.json();
+    const basicPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const invalidSequences = /(\.{2,}|--|__)/;
+    const blockedChars = /[^\w.@+-]/;
+    const trimmed = email.trim().toLowerCase();
+    const tld = trimmed.split(".").pop() ?? "";
+    const allowedTlds = new Set([
+      "com",
+      "net",
+      "org",
+      "io",
+      "co",
+      "me",
+      "dev",
+      "app",
+      "ba",
+      "rs",
+      "hr",
+      "de",
+    ]);
 
-      const deliverability = payload?.deliverability?.toString().toLowerCase();
-      const reputation = payload?.reputation?.toString().toLowerCase();
-      const qualityScore = Number.parseFloat(payload?.quality_score ?? payload?.score ?? "0");
+    const isValid =
+      basicPattern.test(trimmed) &&
+      !invalidSequences.test(trimmed) &&
+      !blockedChars.test(trimmed) &&
+      !trimmed.startsWith(".") &&
+      !trimmed.endsWith(".") &&
+      trimmed.length <= 254 &&
+      allowedTlds.has(tld);
 
-      const deliverable =
-        deliverability === "high" ||
-        deliverability === "medium" ||
-        deliverability === "deliverable";
-
-      const trusted =
-        reputation === "good" ||
-        reputation === "low_risk" ||
-        reputation === "neutral";
-
-      const isAcceptable = deliverable && trusted && qualityScore >= 0.5;
-
-      if (!isAcceptable) {
-        toast.error("Please provide a valid email address before submitting.");
-      }
-
-      return isAcceptable;
-    } catch (err) {
-      console.error("Email validation error:", err);
-      toast.error("Unable to verify your email right now. Please try again later.");
-      return false;
+    if (!isValid) {
+      toast.error("Please provide a valid email address before submitting.");
     }
+
+    return isValid;
   };
 
   const sendEmail = async (ownerParams, userParams) => {
