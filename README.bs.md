@@ -12,7 +12,7 @@ Ovaj portfolio je dizajniran da bude vizuelno privlačan i jednostavan za koriš
 - **Interaktivni 3D modeli:** Zanimljivi 3D modeli renderovani pomoću React Three Fiber‑a oživljavaju portfolio.
 - **Glatke animacije:** Framer Motion obezbjeđuje fluidne animacije i prijelaze za prijatno korisničko iskustvo.
 - **Responzivan dizajn:** Besprijekorno se prilagođava različitim veličinama ekrana koristeći `useScreenSize` hook.
-- **Kontakt forma:** Funkcionalna kontakt forma napravljena sa `react-hook-form` i integrisana sa `emailjs` (trenutno demo režim).
+- **Kontakt forma:** Funkcionalna kontakt forma napravljena sa `react-hook-form` i integrisana sa `emailjs` .
 - **Prikaz projekata:** Posebna stranica s projektima sa detaljnim informacijama o svakom projektu.
 - **Odjeljak O meni:** Sveobuhvatna „O meni“ stranica sa detaljima o vašim vještinama, iskustvu i statistikama.
 - **Internacionalizacija (i18n):** Podrška za više jezika (bosanski, engleski, njemački) za globalnu publiku.
@@ -43,7 +43,7 @@ Ovaj portfolio je dizajniran da bude vizuelno privlačan i jednostavan za koriš
 *   **Internacionalizacija:**
     *   Prilagođeni rječnik (`src/app/i18n/dict.js`): Za čuvanje prijevoda.
 *   **E‑pošta:**
-    *   [@emailjs/browser](https://www.emailjs.com/): Za slanje e‑pošte direktno iz pregledača (trenutno demo režim).
+    *   [@emailjs/browser](https://www.emailjs.com/): Za slanje e‑pošte direktno iz pregledača.
 *   **Obrada slika:**
     *   [Sharp](https://sharp.pixelplumbing.com/): Biblioteka visokih performansi za obradu slika.
 *   **Linting:**
