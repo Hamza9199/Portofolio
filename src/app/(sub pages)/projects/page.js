@@ -5,11 +5,7 @@ import { projectsData } from "../../data";
 import RenderModel from "@/components/RenderModel";
 import NextDynamic from "next/dynamic";
 import RefreshOnMount from "@/components/RefreshOnMount";
-
-export const metadata = {
-  title: "Projects",
-};
-export const dynamic = "force-dynamic";
+import { RouteLoadingOverlay } from "@/components/Loading";
 
 const Staff = NextDynamic(() => import("@/components/models/Staff"), {
   ssr: false,
@@ -26,14 +22,17 @@ export default function Home() {
         priority
         sizes="100vw"
       />
-
       <ProjectList projects={projectsData} />
-
       <div className="flex items-center justify-center fixed  top-20  lg:top-20  left:2 -z-10 lg:-left-0 h-screen">
         <RenderModel fit={false}>
           <Staff />
         </RenderModel>
       </div>
+      <RouteLoadingOverlay
+        minDuration={500}
+        headline="Lights out"
+        subline="Fueling the project pitwall"
+      />
     </>
   );
 }

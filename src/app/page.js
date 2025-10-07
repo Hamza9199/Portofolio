@@ -4,6 +4,7 @@ import RenderModel from "@/components/RenderModel";
 import Navigation from "@/components/navigation";
 import NextDynamic from "next/dynamic";
 import RefreshOnMount from "@/components/RefreshOnMount";
+import { RouteLoadingOverlay } from "@/components/Loading";
 
 export const dynamic = "force-dynamic";
 
@@ -23,13 +24,17 @@ export default function Home() {
         fill
         className="-z-50 w-full h-full object-cover object-center opacity-50"
       />
-
       <div className="w-full h-screen">
         <Navigation />
         <RenderModel fit={false}>
           <Wizard />
         </RenderModel>
       </div>
+      <RouteLoadingOverlay
+        minDuration={500}
+        headline="Lights out"
+        subline="Dialing in the home grid"
+      />
     </main>
   );
 }
