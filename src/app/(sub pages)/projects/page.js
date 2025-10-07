@@ -4,7 +4,6 @@ import ProjectList from "@/components/projects";
 import { projectsData } from "../../data";
 import RenderModel from "@/components/RenderModel";
 import NextDynamic from "next/dynamic";
-import RefreshOnMount from "@/components/RefreshOnMount";
 import { RouteLoadingOverlay } from "@/components/Loading";
 
 const Staff = NextDynamic(() => import("@/components/models/Staff"), {
@@ -14,7 +13,6 @@ const Staff = NextDynamic(() => import("@/components/models/Staff"), {
 export default function Home() {
   return (
     <>
-      <RefreshOnMount />
       <Image
         src={bg}
         alt="Next.js Portfolio website's about page background image"

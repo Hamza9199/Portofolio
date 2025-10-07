@@ -3,7 +3,6 @@ import bg from "../../public/background/home-background.png";
 import RenderModel from "@/components/RenderModel";
 import Navigation from "@/components/navigation";
 import NextDynamic from "next/dynamic";
-import RefreshOnMount from "@/components/RefreshOnMount";
 import { RouteLoadingOverlay } from "@/components/Loading";
 
 export const dynamic = "force-dynamic";
@@ -15,7 +14,6 @@ const Wizard = NextDynamic(() => import("@/components/models/Wizard"), {
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between relative">
-      <RefreshOnMount />
       <Image
         priority
         sizes="100vw"
