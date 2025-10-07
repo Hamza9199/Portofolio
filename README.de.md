@@ -12,7 +12,7 @@ Dieses Portfolio ist darauf ausgelegt, visuell ansprechend und benutzerfreundlic
 - **Interaktive 3D‑Modelle:** Fesselnde 3D‑Modelle mit React Three Fiber erwecken das Portfolio zum Leben.
 - **Sanfte Animationen:** Framer Motion sorgt für flüssige Animationen und Übergänge für ein angenehmes Nutzererlebnis.
 - **Responsives Design:** Passt sich mithilfe des `useScreenSize`‑Hooks nahtlos an unterschiedliche Bildschirmgrößen an.
-- **Kontaktformular:** Funktionales Kontaktformular mit `react-hook-form` und Integration von `emailjs` (derzeit Demo‑Modus).
+- **Kontaktformular:** Funktionales Kontaktformular mit `react-hook-form` und Integration von `emailjs` .
 - **Projektübersicht:** Eigene Projektseite mit detaillierten Informationen zu jedem Projekt.
 - **Über‑mich‑Bereich:** Umfassende „Über“‑Seite mit Details zu deinen Fähigkeiten, Erfahrungen und Statistiken.
 - **Internationalisierung (i18n):** Unterstützt mehrere Sprachen (Bosnisch, Englisch, Deutsch) für ein globales Publikum.
@@ -43,7 +43,7 @@ Dieses Portfolio ist darauf ausgelegt, visuell ansprechend und benutzerfreundlic
 *   **Internationalisierung:**
     *   Eigenes Wörterbuch (`src/app/i18n/dict.js`): Zum Speichern der Übersetzungen.
 *   **E‑Mail:**
-    *   [@emailjs/browser](https://www.emailjs.com/): Zum Senden von E‑Mails direkt aus dem Browser (derzeit Demo‑Modus).
+    *   [@emailjs/browser](https://www.emailjs.com/): Zum Senden von E‑Mails direkt aus dem Browser .
 *   **Bildverarbeitung:**
     *   [Sharp](https://sharp.pixelplumbing.com/): Hochleistungs‑Bildverarbeitungsbibliothek.
 *   **Linting:**
