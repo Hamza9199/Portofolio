@@ -1,17 +1,15 @@
 "use client";
 import React, { useRef, useEffect, useLayoutEffect } from "react";
 import { useGLTF } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useThree } from "@react-three/fiber";
 
 const Wizard = React.memo(function Wizard(props) {
   const { nodes, materials } = useGLTF("/models/wizard-transformed.glb");
   const { size, camera } = useThree();
 
-  // Blago smanji svjetlinu modela preko materijala
   useEffect(() => {
     Object.values(materials).forEach((m) => {
       if (!m || !m.isMaterial) return;
-      // Sačuvaj originalne vrijednosti prvi put
       if (!m.userData.__orig) {
         m.userData.__orig = {
           color: m.color ? m.color.clone() : null,
@@ -23,7 +21,6 @@ const Wizard = React.memo(function Wizard(props) {
           metalness: typeof m.metalness === "number" ? m.metalness : undefined,
         };
       }
-      // Primijeni jednom i ne kumuliraj
       if (m.userData.__darkenedApplied) return;
       const o = m.userData.__orig;
       if (o.color && m.color) m.color.copy(o.color).multiplyScalar(0.85);
@@ -36,27 +33,14 @@ const Wizard = React.memo(function Wizard(props) {
     });
   }, [materials]);
 
-  const controls = useThree((state) => state.controls);
-
-  useEffect(() => {
-    if (controls) {
-      controls.enabled = false;
-      if ("enableZoom" in controls) controls.enableZoom = false;
-      if ("enableRotate" in controls) controls.enableRotate = false;
-      if ("enablePan" in controls) controls.enablePan = false;
-    }
-  }, [controls]);
-
   const wrapperRef = useRef();
   useLayoutEffect(() => {
     const g = wrapperRef.current;
     if (!g) return;
 
-    // base transform
     g.rotation.set(0, Math.PI, 0);
     let y = -5;
 
-    // convert 20px to world units at target z=0
     try {
       if (camera && size) {
         if (camera.isPerspectiveCamera) {
@@ -75,8 +59,7 @@ const Wizard = React.memo(function Wizard(props) {
 
     g.position.set(0, y, 0);
     g.scale.set(0.6, 0.6, 0.6);
-    g.updateMatrix();
-    g.matrixAutoUpdate = false;
+    g.updateWorldMatrix(true, true);
   }, [size, camera]);
 
   return (

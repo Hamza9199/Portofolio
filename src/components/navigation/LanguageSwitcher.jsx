@@ -1,4 +1,3 @@
-// filepath: src/components/navigation/LanguageSwitcher.jsx
 "use client";
 import { useLanguage } from "../../app/i18n/LanguageProvider";
 

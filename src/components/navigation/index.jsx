@@ -13,7 +13,6 @@ const Navigation = () => {
   const isMedium = size >= 768;
   const { t } = useLanguage();
 
-  // Translate labels while preserving original structure
   const translatedBtnList = (BtnList || []).map((item) => ({
     ...item,
     label: item.i18nKey ? t(item.i18nKey) : item.label,

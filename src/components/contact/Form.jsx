@@ -24,7 +24,6 @@ export default function Form() {
 
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-  // Send primary notification to owner, then try auto-reply to user
   const sendEmail = async (ownerParams, userParams) => {
     const toastId = toast.loading("Sending your message, please wait...");
     const options = {
@@ -48,10 +47,8 @@ export default function Form() {
       return;
     }
 
-    // Auto-reply (non-blocking-ish): respect EmailJS throttle to avoid 429
     if (process.env.NEXT_PUBLIC_AUTOREPLY_TEMPLATE_ID) {
       try {
-        // wait >5s to satisfy throttle/rate limit before second send
         await sleep(6000);
         await emailjs.send(
           process.env.NEXT_PUBLIC_SERVICE_ID,
@@ -84,21 +81,21 @@ export default function Form() {
   };
 
   const onSubmit = (data) => {
+    const safeEmail = (data.email || "").trim().toLowerCase();
+
     const ownerParams = {
       to_name: "Hamza",
       to_email: process.env.NEXT_PUBLIC_TO_EMAIL,
       from_name: data.name,
-      reply_to: data.email,
+      reply_to: safeEmail,
       message: data.message,
     };
 
     const userParams = {
       from_name: data.name,
-      reply_to: data.email,
+      reply_to: safeEmail,
       message: data.message,
       to_email: process.env.NEXT_PUBLIC_TO_EMAIL,
-      user_email: data.email,
-      to_name: data.name,
     };
 
     sendEmail(ownerParams, userParams);

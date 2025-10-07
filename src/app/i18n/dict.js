@@ -1,4 +1,3 @@
-// filepath: src/app/i18n/dict.js
 export const dict = {
   bs: {
     nav: {
