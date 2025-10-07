@@ -12,7 +12,7 @@ This portfolio is designed to be visually appealing and user-friendly, providing
 - **Interactive 3D Models:** Engaging 3D models rendered with React Three Fiber bring the portfolio to life.
 - **Smooth Animations:** Framer Motion provides fluid animations and transitions for a delightful user experience.
 - **Responsive Design:** Adapts seamlessly to different screen sizes using the `useScreenSize` hook.
-- **Contact Form:** A functional contact form built with `react-hook-form` and integrated with `emailjs` (currently demo mode).
+- **Contact Form:** A functional contact form built with `react-hook-form` and integrated with `emailjs`.
 - **Project Showcase:** A dedicated projects page with detailed information about each project.
 - **About Me Section:** A comprehensive "About" page with details about your skills, experience, and statistics.
 - **Internationalization (i18n):** Supports multiple languages (Bosnian, English, German) for a global audience.
