@@ -4,6 +4,9 @@ import { Volume2, VolumeX } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
+const TARGET_VOLUME = 0.4;
+const AUDIO_SRC = "/audio/birds39-forest-20772.mp3";
+
 const Modal = ({ onClose, toggle }) => {
   return createPortal(
     <div className="fixed inset-0 bg-background/60 backdrop-blur-sm flex items-center justify-center">
@@ -72,6 +75,20 @@ const Sound = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.volume = TARGET_VOLUME;
+
+    const ensureVolume = () => {
+      audio.volume = TARGET_VOLUME;
+    };
+
+    audio.addEventListener("volumechange", ensureVolume);
+    return () => audio.removeEventListener("volumechange", ensureVolume);
+  }, []);
+
   const toggle = () => {
     const newState = !isPlaying;
     setIsPlaying(!isPlaying);
@@ -87,7 +104,7 @@ const Sound = () => {
       )}
 
       <audio ref={audioRef} loop>
-        <source src={"/audio/birds39-forest-20772.mp3"} type="audio/mpeg" />
+        <source src={AUDIO_SRC} type="audio/mpeg" />
         your browser does not support the audio element.
       </audio>
       <motion.button

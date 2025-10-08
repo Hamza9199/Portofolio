@@ -1,19 +1,61 @@
-
 "use client";
-import React from "react";
+import React, { useCallback, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 
 const Staff = React.memo(function Staff(props) {
   const { nodes, materials } = useGLTF("/models/staff-transformed.glb");
+  const carRef = useRef(null);
+  const wheelRefs = useRef([]);
+  const baseTransform = useRef(null);
 
-  
-      return (
-    <group {...props} dispose={null}>
+  const registerWheel = useCallback((wheel) => {
+    if (wheel && !wheelRefs.current.includes(wheel)) {
+      wheelRefs.current.push(wheel);
+    }
+  }, []);
+
+  useFrame(({ clock }, delta) => {
+    if (!carRef.current) return;
+
+    if (!baseTransform.current) {
+      baseTransform.current = {
+        position: carRef.current.position.clone(),
+        rotation: carRef.current.rotation.clone(),
+      };
+    }
+
+    const { position, rotation } = baseTransform.current;
+    const t = clock.getElapsedTime();
+
+    carRef.current.position.set(
+      position.x + Math.sin(t * 0.4) * 0.25,
+      position.y + Math.sin(t * 0.8) * 0.05,
+      position.z + Math.cos(t * 0.4) * 0.2
+    );
+    carRef.current.rotation.set(
+      rotation.x,
+      rotation.y + Math.sin(t * 0.5) * 0.2,
+      rotation.z + Math.sin(t * 0.6) * 0.05
+    );
+
+    wheelRefs.current.forEach((wheel) => {
+      wheel.rotation.x -= delta * 8;
+    });
+  });
+
+  return (
+    <group {...props} dispose={null} ref={carRef}>
       <group name="Sketchfab_Scene">
-        <group name="Sketchfab_model" rotation={[-Math.PI / 5.2, 1.9, 3.3]} scale={2.01} position={[-0.5,-1,0]}>
+        <group name="Sketchfab_model" rotation={[-Math.PI / 5.2, 1.9, 3.3]} scale={2.01} position={[-0.5, -1, 0]}>
           <group name="root">
             <group name="GLTF_SceneRootNode" rotation={[Math.PI / 2, 0, 0]}>
-              <group name="Front_Wheels002_0" position={[-0.921, 0.274, 0.909]} scale={2.182}>
+              <group
+                name="Front_Wheels002_0"
+                ref={registerWheel}
+                position={[-0.921, 0.274, 0.909]}
+                scale={2.182}
+              >
                 <mesh
                   name="Object_4"
                   geometry={nodes.Object_4.geometry}
@@ -40,7 +82,12 @@ const Staff = React.memo(function Staff(props) {
                   material={materials.SCREW}
                 />
               </group>
-              <group name="Front_Wheels003_1" position={[-0.921, 0.274, 1.799]} scale={2.182}>
+              <group
+                name="Front_Wheels003_1"
+                ref={registerWheel}
+                position={[-0.921, 0.274, 1.799]}
+                scale={2.182}
+              >
                 <mesh
                   name="Object_10"
                   geometry={nodes.Object_10.geometry}
@@ -67,7 +114,12 @@ const Staff = React.memo(function Staff(props) {
                   material={materials.SCREW}
                 />
               </group>
-              <group name="Front_Wheels004_2" position={[-0.921, 0.274, 0.039]} scale={2.182}>
+              <group
+                name="Front_Wheels004_2"
+                ref={registerWheel}
+                position={[-0.921, 0.274, 0.039]}
+                scale={2.182}
+              >
                 <mesh
                   name="Object_16"
                   geometry={nodes.Object_16.geometry}
@@ -99,7 +151,7 @@ const Staff = React.memo(function Staff(props) {
         </group>
       </group>
     </group>
-  )
+  );
 });
 
 export default Staff;
