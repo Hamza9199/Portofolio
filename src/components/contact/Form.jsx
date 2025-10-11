@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { Toaster, toast } from "sonner";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/app/i18n/LanguageProvider";
 
 const container = {
   hidden: { opacity: 0 },
@@ -16,6 +17,7 @@ const container = {
 const item = { hidden: { scale: 0 }, show: { scale: 1 } };
 
 export default function Form() {
+  const { t } = useLanguage();
   const {
     register,
     handleSubmit,
@@ -55,14 +57,14 @@ export default function Form() {
       allowedTlds.has(tld);
 
     if (!isValid) {
-      toast.error("Please provide a valid email address before submitting.");
+      toast.error(t("form.toast.invalidEmail"));
     }
 
     return isValid;
   };
 
   const sendEmail = async (ownerParams, userParams) => {
-    const toastId = toast.loading("Sending your message, please wait...");
+    const toastId = toast.loading(t("form.toast.sending"));
     const options = {
       publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
       limitRate: { throttle: 5000 },
@@ -77,10 +79,7 @@ export default function Form() {
       );
     } catch (err) {
       console.error("Owner notification send failed:", err);
-      toast.error(
-        "There was an error sending your message, please try again later!",
-        { id: toastId }
-      );
+      toast.error(t("form.toast.error"), { id: toastId });
       return;
     }
 
@@ -111,10 +110,7 @@ export default function Form() {
       }
     }
 
-    toast.success(
-      "I have received your message, I will get back to you soon!",
-      { id: toastId }
-    );
+    toast.success(t("form.toast.success"), { id: toastId });
   };
 
   const onSubmit = async (data) => {
@@ -145,6 +141,14 @@ export default function Form() {
   return (
     <>
       <Toaster richColors={true} />
+      <div className="flex flex-col items-center justify-center space-y-6 w-full sm:w-3/4">
+        <h1 className="text-accent font-semibold text-center text-4xl capitalize">
+          {t("contact.title")}
+        </h1>
+        <p className="text-center font-light text-sm xs:text-base">
+          {t("contact.description")}
+        </p>
+      </div>
       <motion.form
         variants={container}
         initial="hidden"
@@ -155,12 +159,12 @@ export default function Form() {
         <motion.input
           variants={item}
           type="text"
-          placeholder="name"
+          placeholder={t("form.placeholders.name")}
           {...register("name", {
-            required: "This field is required!",
+            required: t("form.errors.name.required"),
             minLength: {
               value: 3,
-              message: "Name should be atleast 3 characters long.",
+              message: t("form.errors.name.min"),
             },
           })}
           className="w-full p-2 rounded-md shadow-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 custom-bg"
@@ -173,8 +177,8 @@ export default function Form() {
         <motion.input
           variants={item}
           type="email"
-          placeholder="email"
-          {...register("email", { required: "This field is required!" })}
+          placeholder={t("form.placeholders.email")}
+          {...register("email", { required: t("form.errors.email.required") })}
           className="w-full p-2 rounded-md shadow-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 custom-bg"
         />
         {errors.email && (
@@ -184,16 +188,16 @@ export default function Form() {
         )}
         <motion.textarea
           variants={item}
-          placeholder="message"
+          placeholder={t("form.placeholders.message")}
           {...register("message", {
-            required: "This field is required!",
+            required: t("form.errors.message.required"),
             maxLength: {
               value: 500,
-              message: "Message should be less than 500 characters",
+              message: t("form.errors.message.max"),
             },
             minLength: {
               value: 50,
-              message: "Message should be more than 50 characters",
+              message: t("form.errors.message.min"),
             },
           })}
           className="w-full p-2 rounded-md shadow-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 custom-bg"
@@ -206,7 +210,7 @@ export default function Form() {
 
         <motion.input
           variants={item}
-          value="Send!"
+          value={t("form.send")}
           className="px-10 py-4 rounded-md shadow-lg bg-background border border-accent/30 border-solid
       hover:shadow-glass-sm backdrop-blur-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 cursor-pointer capitalize
       "

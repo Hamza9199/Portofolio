@@ -19,20 +19,13 @@ export default function Contact() {
       />
 
       <article className="relative w-full flex flex-col items-center justify-center py-8 sm:py-0 space-y-8">
-        <div className="flex flex-col items-center justify-center space-y-6 w-full sm:w-3/4">
-          <h1 className="text-accent font-semibold text-center text-4xl capitalize">
-            Contact Me
-          </h1>
-          <p className="text-center font-light text-sm xs:text-base">
-            Whether you have a question, want to collaborate, or just want to say
-            hello, feel free to reach out! I&apos;m always open to discussing new
-            projects, creative ideas, or opportunities to be part of your visions.
-            Let&apos;s connect and create something amazing together!
-          </p>
-        </div>
         <Form />
       </article>
-      <RouteLoadingOverlay minDuration={500} headline="Lights out" subline="Opening the contact garage" />
+      <RouteLoadingOverlay
+        minDuration={500}
+        headlineKey="loading.contact.headline"
+        sublineKey="loading.contact.subline"
+      />
     </>
   );
 }

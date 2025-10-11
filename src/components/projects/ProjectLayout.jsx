@@ -1,6 +1,8 @@
+"use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { useLanguage } from "@/app/i18n/LanguageProvider";
 
 const item = {
   hidden: { opacity: 0, y: 30 },
@@ -9,6 +11,7 @@ const item = {
 
 const ProjectCard = motion.div;
 const ProjectLayout = ({ name, description, date, demoLink, image, featured = false }) => {
+  const { t } = useLanguage();
   const imgHeight = featured ? "h-64 md:h-80" : "h-48 md:h-56";
   const titleClass = featured ? "text-xl md:text-2xl" : "text-lg md:text-xl";
   const descClass = featured ? "text-base md:text-lg" : "text-sm md:text-base";
@@ -48,10 +51,10 @@ const ProjectLayout = ({ name, description, date, demoLink, image, featured = fa
               target="_blank"
               className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-foreground text-background text-sm md:text-base hover:opacity-90 transition"
             >
-              View
+              {t("projects.view")}
             </Link>
           ) : (
-            <span className="text-xs md:text-sm text-muted italic">Link soon</span>
+            <span className="text-xs md:text-sm text-muted italic">{t("projects.linkSoon")}</span>
           )}
         </div>
       </div>

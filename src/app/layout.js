@@ -32,10 +32,10 @@ export default function RootLayout({ children }) {
       >
         <ClientProviders>
           {children}
+          <FireFliesBackground />
+          <Sound />
+          <div id="my-modal" />
         </ClientProviders>
-        <FireFliesBackground />
-        <Sound />
-        <div id="my-modal" />
       </body>
     </html>
   );

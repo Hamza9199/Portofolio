@@ -30,8 +30,8 @@ export default function Home() {
       </div>
       <RouteLoadingOverlay
         minDuration={500}
-        headline="Lights out"
-        subline="Dialing in the home grid"
+        headlineKey="loading.home.headline"
+        sublineKey="loading.home.subline"
       />
     </main>
   );

@@ -41,7 +41,8 @@ export default function Home() {
       </div>
 
       <AboutDetails />
-      <RouteLoadingOverlay minDuration={500} headline="Lights out" subline="Tuning the about paddock" />
+      <RouteLoadingOverlay minDuration={500} headlineKey="loading.about.headline"
+      sublineKey="loading.about.subline" />
     </>
   );
 }

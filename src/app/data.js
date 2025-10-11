@@ -1,6 +1,9 @@
 export const projectsData = [
   {
     id: 1,
+    nameKey: "projectsData.1.name",
+    descriptionKey: "projectsData.1.description",
+    dateKey: "projectsData.1.date",
     name: "Una Film Distribucija",
     description: "Web application for distributing movies and film news. Users can view movies, trailers, news and other content, while administrators manage content via a dashboard.",
     date: "Web App",
@@ -9,6 +12,9 @@ export const projectsData = [
   },
   {
     id: 2,
+    nameKey: "projectsData.2.name",
+    descriptionKey: "projectsData.2.description",
+    dateKey: "projectsData.2.date",
     name: "Music Streaming Service",
     description: "Mobile music streaming app focused on a customizable user experience with innovative features like offline mode.",
     date: "Mobile App",
@@ -17,6 +23,9 @@ export const projectsData = [
   },
   {
     id: 3,
+    nameKey: "projectsData.3.name",
+    descriptionKey: "projectsData.3.description",
+    dateKey: "projectsData.3.date",
     name: "Cats Defenders",
     description: "Space‑Invaders style game in C# (Windows Forms). Control a cat defending its territory from enemy attacks and survive as long as possible.",
     date: "Game",
@@ -25,6 +34,9 @@ export const projectsData = [
   },
   {
     id: 4,
+    nameKey: "projectsData.4.name",
+    descriptionKey: "projectsData.4.description",
+    dateKey: "projectsData.4.date",
     name: "ForgeAI",
     description: "Advanced music production technology enabling intuitive music generation using text prompts and AI models for high quality and flexibility.",
     date: "Plugin, Web App",
@@ -33,6 +45,9 @@ export const projectsData = [
   },
   {
     id: 5,
+    nameKey: "projectsData.5.name",
+    descriptionKey: "projectsData.5.description",
+    dateKey: "projectsData.5.date",
     name: "TrailerFlix",
     description: "Web app for viewing and organizing movie trailers, built as part of a Web Design course. Includes search, viewing, auth and a personalized dashboard.",
     date: "Web App",
@@ -41,6 +56,9 @@ export const projectsData = [
   },
   {
     id: 6,
+    nameKey: "projectsData.6.name",
+    descriptionKey: "projectsData.6.description",
+    dateKey: "projectsData.6.date",
     name: "Audio System",
     description: "Desktop music player built in C++ with OOP focus. Browse, listen to and manage locally stored music like classic Windows players.",
     date: "Desktop App",
@@ -49,6 +67,9 @@ export const projectsData = [
   },
   {
     id: 7,
+    nameKey: "projectsData.7.name",
+    descriptionKey: "projectsData.7.description",
+    dateKey: "projectsData.7.date",
     name: "RedBullShop",
     description: "E‑commerce web app for browsing products, cart, orders, reviews, and user profile management (frontend + backend).",
     date: "Web App",
@@ -57,6 +78,9 @@ export const projectsData = [
   },
   {
     id: 8,
+    nameKey: "projectsData.8.name",
+    descriptionKey: "projectsData.8.description",
+    dateKey: "projectsData.8.date",
     name: "Sistem Prijave za Posao",
     description: "Full‑stack app for managing users, jobs and reviews. Backend in Spring Boot, frontend in React; includes setup and run instructions.",
     date: "Web App",
@@ -65,6 +89,9 @@ export const projectsData = [
   },
   {
     id: 9,
+    nameKey: "projectsData.9.name",
+    descriptionKey: "projectsData.9.description",
+    dateKey: "projectsData.9.date",
     name: "End‑to‑End (E2E) testiranje u React aplikacijama",
     description: "Focus on E2E testing in React apps using Cypress to ensure functionality and user experience in modern web development.",
     date: "Web App Testing",
@@ -73,6 +100,9 @@ export const projectsData = [
   },
   {
     id: 10,
+    nameKey: "projectsData.10.name",
+    descriptionKey: "projectsData.10.description",
+    dateKey: "projectsData.10.date",
     name: "Embedded Smart Car System",
     description: "Vehicle with dual MCU, sensor fusion, environmental monitoring and IR remote control.",
     date: "MCU",
@@ -81,6 +111,9 @@ export const projectsData = [
   },
   {
     id: 11,
+    nameKey: "projectsData.11.name",
+    descriptionKey: "projectsData.11.description",
+    dateKey: "projectsData.11.date",
     name: "DecibelOld",
     description: "Modern music platform for listening, playlists, following artists, and interactions (comments/likes) with a simple user experience.",
     date: "Web App",

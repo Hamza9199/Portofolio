@@ -1,11 +1,11 @@
-import Loading from "@/components/Loading";
+import { RouteLoadingOverlay } from "@/components/Loading";
 
 export default function ContactLoading() {
   return (
-    <Loading
-      visible
-      headline="Lights out"
-      subline="Opening the contact garage"
+    <RouteLoadingOverlay
+      minDuration={500}
+      headlineKey="loading.contact.headline"
+      sublineKey="loading.contact.subline"
     />
   );
 }

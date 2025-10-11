@@ -2,6 +2,7 @@
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "@/app/i18n/LanguageProvider";
 
 const clamp = (value) => {
   if (typeof value !== "number" || Number.isNaN(value)) return null;
@@ -63,9 +64,12 @@ export default Loading;
 export function RouteLoadingOverlay({
   minDuration = 500,
   enabled = true,
-  headline = "Lights out",
-  subline = "Preparing the next lap",
+  headline,
+  subline,
+  headlineKey,
+  sublineKey,
 }) {
+  const { t } = useLanguage();
   const pathname = usePathname();
   const [visible, setVisible] = useState(false);
   const timerRef = useRef(null);
@@ -80,5 +84,8 @@ export function RouteLoadingOverlay({
     };
   }, [pathname, enabled, minDuration]);
 
-  return <Loading visible={visible} headline={headline} subline={subline} />;
+  const resolvedHeadline = headlineKey ? t(headlineKey) : (headline ?? "Lights out");
+  const resolvedSubline = sublineKey ? t(sublineKey) : (subline ?? "Preparing the next lap");
+
+  return <Loading visible={visible} headline={resolvedHeadline} subline={resolvedSubline} />;
 }

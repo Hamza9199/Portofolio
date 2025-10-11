@@ -28,8 +28,8 @@ export default function Home() {
       </div>
       <RouteLoadingOverlay
         minDuration={500}
-        headline="Lights out"
-        subline="Fueling the project pitwall"
+        headlineKey="loading.projects.headline"
+        sublineKey="loading.projects.subline"
       />
     </>
   );

@@ -1,11 +1,11 @@
-import Loading from "@/components/Loading";
+import { RouteLoadingOverlay } from "@/components/Loading";
 
 export default function AboutLoading() {
   return (
-    <Loading
-      visible
-      headline="Lights out"
-      subline="Tuning the about paddock"
+    <RouteLoadingOverlay
+      minDuration={500}
+      headlineKey="loading.about.headline"
+      sublineKey="loading.about.subline"
     />
   );
 }

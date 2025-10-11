@@ -2,9 +2,11 @@
 import { motion } from "framer-motion";
 import { Home } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/app/i18n/LanguageProvider";
 
 const NavLink = motion(Link);
 const HomeBtn = () => {
+  const { t } = useLanguage();
   return (
     <NavLink
       initial={{ scale: 0 }}
@@ -25,10 +27,10 @@ const HomeBtn = () => {
         <span className="peer bg-transparent absolute top-0 left-0 w-full h-full" />
 
         <span className="absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-background text-foreground text-sm rounded-md shadow-lg whitespace-nowrap">
-          Home
+          {t("nav.home")}
         </span>
       </span>
-      <span className="sr-only">Go to Home Page</span>
+      <span className="sr-only">{t("aria.homeSr")}</span>
     </NavLink>
   );
 };
