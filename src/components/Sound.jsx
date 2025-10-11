@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useLanguage } from "@/app/i18n/LanguageProvider";
 
-const TARGET_VOLUME = 0.4;
+const TARGET_VOLUME = 0.1; 
 const AUDIO_SRC = "/audio/birds39-forest-20772.mp3";
 const LANGUAGE_ORDER = ["bs", "en", "de"];
 
@@ -39,6 +39,9 @@ const Modal = ({ onClose, toggle, t }) => {
   );
 };
 
+const AudioContextClass =
+  typeof window !== "undefined" ? (window.AudioContext || window.webkitAudioContext) : null;
+
 const Sound = () => {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -49,10 +52,42 @@ const Sound = () => {
   const btnRef = useRef(null);
   const menuRef = useRef(null);
 
-  const handleFirstUserInteraction = () => {
+  const audioCtxRef = useRef(null);
+  const gainNodeRef = useRef(null);
+  const sourceNodeRef = useRef(null);
+
+  const initAudioGraph = () => {
+    if (!audioRef.current || !AudioContextClass) return;
+    if (audioCtxRef.current) return;
+
+    const ctx = new AudioContextClass();
+    const src = ctx.createMediaElementSource(audioRef.current);
+    const gain = ctx.createGain();
+    gain.gain.value = TARGET_VOLUME;
+
+    src.connect(gain).connect(ctx.destination);
+
+    audioCtxRef.current = ctx;
+    sourceNodeRef.current = src;
+    gainNodeRef.current = gain;
+  };
+
+  const handleFirstUserInteraction = async () => {
     const musicConsent = localStorage.getItem("musicConsent");
     if (musicConsent === "true" && !isPlaying) {
-      audioRef.current.play();
+      initAudioGraph();
+      if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
+        try { await audioCtxRef.current.resume(); } catch {}
+      }
+
+      if (gainNodeRef.current) {
+        audioRef.current.volume = 1;
+        gainNodeRef.current.gain.value = TARGET_VOLUME;
+      } else {
+        audioRef.current.volume = TARGET_VOLUME; 
+      }
+
+      try { await audioRef.current.play(); } catch {}
       setIsPlaying(true);
     }
 
@@ -86,24 +121,38 @@ const Sound = () => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    audio.volume = TARGET_VOLUME;
-
-    const ensureVolume = () => {
+    const onLoaded = () => {
       audio.volume = TARGET_VOLUME;
     };
 
-    audio.addEventListener("volumechange", ensureVolume);
-    return () => audio.removeEventListener("volumechange", ensureVolume);
+    audio.addEventListener("loadedmetadata", onLoaded);
+    return () => audio.removeEventListener("loadedmetadata", onLoaded);
   }, []);
 
-  const toggle = () => {
+  const toggle = async () => {
     const newState = !isPlaying;
-    setIsPlaying(!isPlaying);
-    newState ? audioRef.current.play() : audioRef.current.pause();
+    setIsPlaying(newState);
     localStorage.setItem("musicConsent", String(newState));
     localStorage.setItem("consentTime", new Date().toISOString());
-    audioRef.current.volume = TARGET_VOLUME;
     setShowModal(false);
+
+    initAudioGraph();
+    if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
+      try { await audioCtxRef.current.resume(); } catch {}
+    }
+
+    if (gainNodeRef.current) {
+      audioRef.current.volume = 1; 
+      gainNodeRef.current.gain.value = TARGET_VOLUME;
+    } else {
+      audioRef.current.volume = TARGET_VOLUME;
+    }
+
+    if (newState) {
+      try { await audioRef.current.play(); } catch {}
+    } else {
+      audioRef.current.pause();
+    }
   };
 
   const toggleLangMenu = () => setMenuOpen((v) => !v);
