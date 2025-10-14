@@ -28,14 +28,24 @@ const Navigation = () => {
           return size && size >= 480 ? (
             <div
               key={mounted ? "nav-mounted" : "nav-ssr"}
-              className="w-full max-w-6xl px-4 flex flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-10 lg:gap-12"
+              className="w-full max-w-6xl px-4 flex flex-col items-center gap-4"
             >
-              {translatedBtnList.map((btn, index) => {
-                const delay = index * 0.15;
-                return (
-                  <NavButton key={`${btn.label}-${index}`} x={0} y={0} bounceDelay={delay} {...btn} />
-                );
-              })}
+              <div className="flex items-center justify-center gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+                {translatedBtnList.slice(0, 3).map((btn, index) => {
+                  const delay = index * 0.15;
+                  return (
+                    <NavButton key={`${btn.label}-${index}`} x={0} y={0} bounceDelay={delay} {...btn} />
+                  );
+                })}
+              </div>
+              <div className="flex items-center justify-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 flex-wrap">
+                {translatedBtnList.slice(3).map((btn, index) => {
+                  const delay = (index + 3) * 0.15;
+                  return (
+                    <NavButton key={`${btn.label}-${index}`} x={0} y={0} bounceDelay={delay} {...btn} />
+                  );
+                })}
+              </div>
             </div>
           ) : (
             <div
