@@ -4,9 +4,15 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 const Wizard = React.memo(function Wizard(props) {
-  const { nodes, materials } = useGLTF("/models/wizard-transformed.glb");
+  const { scene, materials } = useGLTF("/models/wizard-transformed.glb");
   const groupRef = useRef();
   const baseXRef = useRef(null);
+  const baseYRef = useRef(null);
+  const lastYRef = useRef(null);
+
+  const wheelMeshesRef = useRef([]);
+  const wheelInitRotRef = useRef(new Map());
+  const wheelAngleRef = useRef(0);
 
   useEffect(() => {
     Object.values(materials).forEach((m) => {
@@ -34,32 +40,65 @@ const Wizard = React.memo(function Wizard(props) {
     });
   }, [materials]);
 
+  useEffect(() => {
+    if (!scene) return;
+    const patterns = [/wheel/i, /tyre/i, /tire/i, /rim/i, /guma/i, /felg/i];
+    const wheels = [];
+    scene.traverse((obj) => {
+      if (obj && obj.isMesh && typeof obj.name === "string") {
+        if (patterns.some((re) => re.test(obj.name))) {
+          wheels.push(obj);
+        }
+      }
+    });
+    wheelMeshesRef.current = wheels;
+    wheelInitRotRef.current.clear();
+    wheels.forEach((w) => {
+      wheelInitRotRef.current.set(w, { x: w.rotation.x, y: w.rotation.y, z: w.rotation.z });
+    });
+  }, [scene]);
+
   useFrame(({ clock }) => {
     if (!groupRef.current) return;
-    if (baseXRef.current === null) {
-      baseXRef.current = groupRef.current.position.x;
-    }
+
+    if (baseXRef.current === null) baseXRef.current = groupRef.current.position.x || 0;
+    if (baseYRef.current === null) baseYRef.current = groupRef.current.position.y || 0;
+    if (lastYRef.current === null) lastYRef.current = baseYRef.current;
+
     const t = clock.elapsedTime;
+
     groupRef.current.position.x = baseXRef.current + Math.sin(t * 0.8) * 0.5;
     groupRef.current.rotation.y = Math.sin(t * 0.6) * 0.05;
+
+    const bob = Math.sin(t * 1.3) * 0.15;
+    const newY = baseYRef.current + bob;
+    const dy = newY - (lastYRef.current ?? newY);
+    groupRef.current.position.y = newY;
+    lastYRef.current = newY;
+
+    const rotFactor = 12; // radians per unit Y
+    wheelAngleRef.current += Math.abs(dy) * rotFactor;
+
+    const angle = wheelAngleRef.current;
+    const wheels = wheelMeshesRef.current;
+    if (wheels && wheels.length) {
+      wheels.forEach((w) => {
+        const init = wheelInitRotRef.current.get(w) || { x: 0, y: 0, z: 0 };
+        w.rotation.x = init.x + angle;
+      });
+    }
   });
 
   return (
-    <group ref={groupRef} {...props} dispose={null}>
-      <group>
-        <group name="RedBull_V2_lp">
-          <mesh
-            name="RedBull_V2_lp_Material_#25_0"
-            castShadow
-            receiveShadow
-            geometry={nodes["RedBull_V2_lp_Material_#25_0"].geometry}
-            material={materials.Material_25}
-            position={[-1, 1, 0]}
-            rotation={[0, 0, 0]}
-            scale={0.02}
-          />
-        </group>
-      </group>
+    <group
+      ref={groupRef}
+      {...props}
+      dispose={null}
+      position={[-0.1, 1, 0]}
+      rotation={[0, 0, 0]}
+      scale={0.02}
+    >
+      <primitive object={scene} />
     </group>
   );
 });
