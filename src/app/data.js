@@ -120,6 +120,17 @@ export const projectsData = [
     demoLink: "https://github.com/Hamza9199/DecibelOld",
     image: "/background/work.png",
   },
+  {
+    id: 12,
+    nameKey: "projectsData.12.name",
+    descriptionKey: "projectsData.12.description",
+    dateKey: "projectsData.12.date",
+    name: "Portfolio",
+    description: "Interactive portfolio built with Next.js, React Three Fiber, and Framer Motion. Features 3D models, smooth animations, i18n, contact form, background audio, and a responsive design.",
+    date: "Web App",
+    demoLink: "https://github.com/Hamza9199/Portofolio",
+    image: "/background/work.png",
+  },
 ];
 
 export const BtnList = [

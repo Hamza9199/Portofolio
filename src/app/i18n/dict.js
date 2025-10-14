@@ -35,7 +35,7 @@ export const dict = {
     contact: {
       title: "Kontaktiraj me",
       description:
-        "Bilo da imate pitanje, želite saradnju ili samo želite da se javite, slobodno me kontaktirajte! Uvijek sam otvoren za nove projekte, kreativne ideje ili prilike da budem dio vaše vizije. Hajde da zajedno napravimo nešto sjajno!",
+        "Bilo da imate pitanje ili želite da sarađujemo, ili jednostavno želite da se javite – slobodno me kontaktirajte! Uvek sam otvoren za nove projekte, kreativne ideje ili prilike da budem deo vaše vizije. Hajde da zajedno napravimo nešto sjajno!",
     },
     form: {
       placeholders: {
@@ -161,8 +161,15 @@ export const dict = {
           "Moderna muzička platforma za slušanje, plejlistе, praćenje izvođača i interakcije (komentari/sviđanja) uz jednostavno korisničko iskustvo.",
         date: "Web aplikacija",
       },
+       12: {
+        name: "Portofolio",
+        description:
+          "Interaktivni portfolio izgrađen pomoću Next.js, React Three Fiber i Framer Motion. Sadrži 3D modele, glatke animacije, i18n, kontakt formu, zvuk u pozadini i responzivni dizajn.",  
+        date: "Web aplikacija",
+      },
     },
-  },
+
+  },    
   en: {
     nav: {
       home: "Home",
@@ -325,8 +332,14 @@ export const dict = {
           "Modern music platform for listening, playlists, following artists, and interactions (comments/likes) with a simple user experience.",
         date: "Web App",
       },
+        12: {
+        name: "Portofolio",
+        description:
+          "Interactive portfolio built with Next.js, React Three Fiber, and Framer Motion. Features 3D models, smooth animations, i18n, contact form, background sound, and responsive design.",       
+        date: "Web App",
     },
   },
+},
   de: {
     nav: {
       home: "Start",
@@ -427,37 +440,37 @@ export const dict = {
         name: "Una Film Distribution",
         description:
           "Webanwendung für die Verbreitung von Filmen i Filmnachrichten. Benutzer können Filme, Trailer, Nachrichten i druge sadržaje pregledati, dok administratori upravljaju sadržajem putem kontrolne table.",
-        date: "Web-App",
+        date: "Web App",
       },
       2: {
         name: "Music Streaming Service",
         description:
           "Mobile Musik-Streaming-App mit Fokus auf ein anpassbares Benutzererlebnis i inovativne funkcije poput offline režima.",
-        date: "Mobilna aplikacija",
+        date: "Mobile App",
       },
       3: {
         name: "Cats Defenders",
         description:
-          "Igra u stilu Space‑Invaders u C# (Windows Forms). Kontrolišite mačku koja brani svoju teritoriju od neprijatelja i preživite što duže.",
-        date: "Igra",
+          "Space-Invaders-Spiel in C# (Windows Forms). Steuere eine Katze, die ihr Territorium vor feindlichen Angriffen verteidigt i überlebe so lange wie möglich.",
+        date: "Spiel",
       },
       4: {
         name: "ForgeAI",
         description:
-          "Napredna tehnologija za muzičku produkciju koja omogućava intuitivno generisanje muzike pomoću tekstualnih upita i AI modela uz visok kvalitet i fleksibilnost.",
-        date: "Plugin, Web aplikacija",
+          "Fortschrittliche Musikproduktionstechnologie, die eine intuitive Musikgenerierung mithilfe von Textabfragen i KI-Modellen mit hoher Qualität i Flexibilität ermöglicht.",
+        date: "Plugin, Web App",
       },
       5: {
         name: "TrailerFlix",
         description:
-          "Web aplikacija za pregled i organizaciju filmskih trailera, izrađena u sklopu kursa Web Dizajn. Uključuje pretragu, pregled, autentifikaciju i personalizovanu kontrolnu tablu.",
-        date: "Web aplikacija",
+          " Web-App zum Ansehen i Organisieren von Filmtrailern, erstellt im Rahmen eines Webdesign-Kurses. Beinhaltet Suche, Anzeige, Authentifizierung i ein personalisiertes Dashboard.",
+        date: "Web App",
       },
       6: {
         name: "Audio System",
         description:
-          "Desktop muzički plejer u C++ sa fokusom na OOP. Pretražujte, slušajte i upravljajte lokalno sačuvanom muzikom kao u klasičnim Windows plejerima.",
-        date: "Desktop-App",
+          "Desktop-Musikplayer in C++ mit OOP-Fokus. Durchsuchen, Anhören i Verwalten lokal gespeicherter Musik wie klassische Windows-Player.",
+        date: "Desktop App",
       },
       7: {
         name: "RedBullShop",
@@ -474,22 +487,28 @@ export const dict = {
       9: {
         name: "End-to-End (E2E) Tests u React-Apps",
         description:
-          "Fokus na E2E testiranje React aplikacija pomoću Cypress‑a radi osiguranja funkcionalnosti i korisničkog iskustva.",
+          "Fokus na E2E-Tests u React-Apps mit Cypress zur Sicherstellung der Funktionalität i Benutzererfahrung u moderner Webentwicklung.",
         date: "Web-App-Tests",
       },
       10: {
         name: "Eingebettetes Smart-Car-System",
         description:
-          "Vozilo sa dvostrukim MCU‑om, fuzijom senzora, praćenjem okoline i IR daljinskim upravljačem.",
+          "Fahrzeug mit dualem MCU, Sensorfusion, Umweltüberwachung i IR-Fernbedienung.",
         date: "MCU",
       },
       11: {
         name: "DecibelOld",
         description:
-          "Moderna muzička platforma za slušanje, plejlistе, praćenje izvođača i interakcije (komentari/sviđanja) uz jednostavno korisničko iskustvo.",
-        date: "Web aplikacija",
+          "Moderne Musikplattform zum Anhören, Erstellen von Playlists, Folgen von Künstlern i Interaktionen (Kommentare/Likes) mit einfachem Benutzererlebnis.",
+        date: "Web App",
       },
+        12: {
+        name: "Portofolio",
+        description:
+          "Ein interaktives Portfolio, erstellt mit Next.js, React Three Fiber und Framer Motion. Mit 3D-Modellen, flüssigen Animationen, i18n, Kontaktformular, Hintergrundsound und reaktionsschnellem Design." ,  
+        date: "Web App",
     },
+  },
   },
 };
 
