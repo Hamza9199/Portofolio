@@ -13,7 +13,7 @@ const Wizard = NextDynamic(() => import("@/components/models/Wizard"), {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between relative">
+    <main className="flex min-h-[100svh] md:min-h-screen flex-col items-center justify-between relative">
       <Image
         priority
         sizes="100vw"
@@ -22,7 +22,7 @@ export default function Home() {
         fill
         className="-z-50 w-full h-full object-cover object-center opacity-50"
       />
-      <div className="w-full h-screen">
+      <div className="w-full h-[100svh] md:h-screen overflow-hidden">
         <Navigation />
         <RenderModel fit={false}>
           <Wizard />

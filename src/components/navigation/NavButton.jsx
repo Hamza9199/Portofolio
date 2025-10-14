@@ -80,7 +80,7 @@ const NavButton = ({
               scroll={false}
             >
               <motion.span
-                className="relative w-40 h-40 p-8 hover:text-accent"
+                className="relative w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 p-6 md:p-7 lg:p-8 hover:text-accent"
                 animate={{ y: [0, -8, 0] }}
                 transition={bounceTransition(bounceDelay)}
               >
@@ -105,7 +105,7 @@ const NavButton = ({
               scroll={false}
             >
               <motion.span
-                className="relative w-20 h-20 xs:w-40 xs:h-40 p-5 xs:p-8 hover:text-accent"
+                className="relative w-16 h-16 sm:w-20 sm:h-20 p-4 sm:p-5 hover:text-accent"
                 animate={{ y: [0, -6, 0] }}
                 transition={bounceTransition(bounceDelay)}
               >
