@@ -31,7 +31,7 @@ export default function Home() {
 
       <div className="relative w-full h-screen flex flex-col items-center justify-center">
         <div className="flex flex-col items-center text-center">
-          <h1 className="font-bold  text-6xl xs:text-7xl sm:text-8xl  lg:text-9xl text-accent">
+          <h1 className="m-5 font-bold  text-6xl xs:text-7xl sm:text-8xl  lg:text-9xl text-accent">
             Hamza Gačić
           </h1>
           <p className="font-light text-foreground text-lg">

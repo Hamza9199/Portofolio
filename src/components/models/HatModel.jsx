@@ -10,7 +10,7 @@ const HatModel = React.memo(function HatModel(props) {
 
     return (
     <group {...props} dispose={null}>
-      <group name="Sketchfab_Scene">
+      <group name="Sketchfab_Scene" position={[0,0.5,0]}>
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 3.1]} scale={4.01}>
           <group name="root">
             <group name="GLTF_SceneRootNode" rotation={[Math.PI / 2, 0, 0]}>
