@@ -38,6 +38,7 @@ const RenderModel = ({
           className,
           ready ? "opacity-100" : "opacity-0 pointer-events-none"
         )}
+        style={{ pointerEvents: 'none' }}
         shadows={false}
         dpr={[1, 2]}
         camera={{ position: [0, 0.6, 8], fov: 45 }}
