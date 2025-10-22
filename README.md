@@ -79,13 +79,12 @@ This portfolio is designed to be visually appealing and user-friendly, providing
 
 4.  Set up environment variables:
 
-    Create a `.env.local` file in the root directory and add the necessary environment variables. For example:
+    Create a `.env` file in the root directory and add the necessary environment variables. For example:
 
     ```
     NEXT_PUBLIC_GITHUB_STATS_URL=your_github_stats_url
     ```
 
-    **Note:** The email sending functionality is currently disabled in the demo. If you want to enable it, you'll need to configure `emailjs` and update the `src/components/contact/Form.jsx` file.
 
 ### Running Locally
 
