@@ -1,6 +1,6 @@
 import Image from "next/image";
 import bg from "../../public/background/home-background.png";
-import RenderModel from "@/components/RenderModel";
+import car from "../../public/background/car.png";
 import Navigation from "@/components/navigation";
 import NextDynamic from "next/dynamic";
 import { RouteLoadingOverlay } from "@/components/Loading";
@@ -22,11 +22,17 @@ export default function Home() {
         fill
         className="-z-50 w-full h-full object-cover object-center opacity-50"
       />
-      <div className="w-full h-[100svh] md:h-screen overflow-hidden">
+      <div className="w-full h-[100svh] md:h-screen overflow-hidden relative">
         <Navigation />
-        <RenderModel fit={false}>
-          <Wizard />
-        </RenderModel>
+        <div className="w-full h-full flex items-center justify-center">
+          <Image
+            priority
+            src={car}
+            alt="car-image"
+            className="w-full h-auto max-w-md md:max-w-lg lg:max-w-xl object-contain"
+          />
+        </div>
+        
       </div>
       <RouteLoadingOverlay
         minDuration={500}
