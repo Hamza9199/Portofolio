@@ -7,7 +7,7 @@ export const projectsData = [
     name: "Una Film Distribucija",
     description: "Web application for distributing movies and film news. Users can view movies, trailers, news and other content, while administrators manage content via a dashboard.",
     date: "Web App",
-    demoLink: "https://unafilm.ba/",
+    demoLink: "https://github.com/Hamza9199/UnaFilm",
     image: "/background/unafilm.png",
   },
   {
