@@ -2,6 +2,7 @@
 import React from "react";
 import ItemLayout from "./ItemLayout";
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/app/i18n/LanguageProvider";
 
 const AboutDetails = () => {
@@ -25,24 +26,24 @@ const AboutDetails = () => {
         </ItemLayout>
 
         <ItemLayout className={"col-span-full sm:col-span-6 md:col-span-4 !p-0 text-accent"}>
-          <img className="w-full h-auto" src={`${process.env.NEXT_PUBLIC_GITHUB_STATS_URL}/api/top-langs?username=Hamza9199&theme=transparent&hide_border=true&title_color=5B9AFE&text_color=FFFFFF&icon_color=5B9AFE&text_bold=false`} alt={t("about.alt.topLangs")} loading="lazy" />
+          <Image width={0} height={0} sizes="100vw" unoptimized className="w-full h-auto" src={`${process.env.NEXT_PUBLIC_GITHUB_STATS_URL}/api/top-langs?username=Hamza9199&theme=transparent&hide_border=true&title_color=5B9AFE&text_color=FFFFFF&icon_color=5B9AFE&text_bold=false`} alt={t("about.alt.topLangs")} loading="lazy" />
         </ItemLayout>
 
         <ItemLayout className={"col-span-full md:col-span-8 !p-0"}>
-          <img className="w-full h-auto" src={`${process.env.NEXT_PUBLIC_GITHUB_STATS_URL}/api?username=Hamza9199&theme=transparent&hide_border=true&title_color=5B9AFE&text_color=FFFFFF&icon_color=5B9AFE&text_bold=false`} alt={t("about.alt.stats")} loading="lazy" />
+          <Image width={0} height={0} sizes="100vw" unoptimized className="w-full h-auto" src={`${process.env.NEXT_PUBLIC_GITHUB_STATS_URL}/api?username=Hamza9199&theme=transparent&hide_border=true&title_color=5B9AFE&text_color=FFFFFF&icon_color=5B9AFE&text_bold=false`} alt={t("about.alt.stats")} loading="lazy" />
         </ItemLayout>
 
         <ItemLayout className={"col-span-full"}>
-          <img className="w-full h-auto" src={`https://skillicons.dev/icons?i=html,css,js,ts,react,nodejs,express,mongodb,mysql,postgres,dotnet,cs,spring,fastapi,electron,python,java,cpp,git,github,cypress,postman,tailwind,vercel,docker&theme=dark`} alt={t("about.alt.techStack")} loading="lazy" />
+          <Image width={0} height={0} sizes="100vw" unoptimized className="w-full h-auto" src={`https://skillicons.dev/icons?i=html,css,js,ts,react,nodejs,express,mongodb,mysql,postgres,dotnet,cs,spring,fastapi,electron,python,java,cpp,git,github,cypress,postman,tailwind,vercel,docker&theme=dark`} alt={t("about.alt.techStack")} loading="lazy" />
         </ItemLayout>
 
         <ItemLayout className={"col-span-full md:col-span-6 !p-0"}>
-          <img className="w-full h-auto" src={`${process.env.NEXT_PUBLIC_GITHUB_STREAK_STATS_URL}?user=Hamza9199&theme=dark&hide_border=true&type=svg&background=EB545400&ring=5B9AFE&currStreakLabel=5B9AFE`} alt={t("about.alt.streak")} loading="lazy" />
+          <Image width={0} height={0} sizes="100vw" unoptimized className="w-full h-auto" src={`${process.env.NEXT_PUBLIC_GITHUB_STREAK_STATS_URL}?user=Hamza9199&theme=dark&hide_border=true&type=svg&background=EB545400&ring=5B9AFE&currStreakLabel=5B9AFE`} alt={t("about.alt.streak")} loading="lazy" />
         </ItemLayout>
 
         <ItemLayout className={"col-span-full md:col-span-6 !p-0"}>
           <Link href="https://github.com/Hamza9199/MusicStreamingService" target="_blank" className="w-full">
-            <img className="w-full h-auto" src={`${process.env.NEXT_PUBLIC_GITHUB_STATS_URL}/api/pin/?username=Hamza9199&repo=MusicStreamingService&theme=transparent&hide_border=true&title_color=5B9AFE&text_color=FFFFFF&icon_color=5B9AFE&text_bold=false&description_lines_count=2`} alt={t("about.alt.pin.music")} loading="lazy" />
+            <Image width={0} height={0} sizes="100vw" unoptimized className="w-full h-auto" src={`${process.env.NEXT_PUBLIC_GITHUB_STATS_URL}/api/pin/?username=Hamza9199&repo=MusicStreamingService&theme=transparent&hide_border=true&title_color=5B9AFE&text_color=FFFFFF&icon_color=5B9AFE&text_bold=false&description_lines_count=2`} alt={t("about.alt.pin.music")} loading="lazy" />
           </Link>
         </ItemLayout>
       </div>

@@ -6,10 +6,9 @@ import { useLanguage } from "@/app/i18n/LanguageProvider";
 
 const item = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const ProjectCard = motion.div;
 const ProjectLayout = ({ name, description, date, demoLink, image, featured = false }) => {
   const { t } = useLanguage();
   const imgHeight = featured ? "h-64 md:h-80" : "h-48 md:h-56";
@@ -17,8 +16,7 @@ const ProjectLayout = ({ name, description, date, demoLink, image, featured = fa
   const descClass = featured ? "text-base md:text-lg" : "text-sm md:text-base";
 
   return (
-    <ProjectCard
-      variants={item}
+    <div
       className="rounded-2xl overflow-hidden custom-bg border border-muted/30 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col"
     >
       {image ? (
@@ -58,7 +56,7 @@ const ProjectLayout = ({ name, description, date, demoLink, image, featured = fa
           )}
         </div>
       </div>
-    </ProjectCard>
+    </div>
   );
 };
 
