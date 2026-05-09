@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { motion } from "framer-motion";
 import ProjectLayout from "./ProjectLayout";
 import { useLanguage } from "@/app/i18n/LanguageProvider";
@@ -16,6 +17,11 @@ const container = {
 
 const ProjectList = ({ projects }) => {
   const { t } = useLanguage();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const localizedProjects = (projects || []).map((p) => ({
     ...p,
@@ -24,12 +30,23 @@ const ProjectList = ({ projects }) => {
     date: p.dateKey ? (t(p.dateKey) || p.date) : p.date,
   }));
 
+  if (!mounted) {
+    return (
+      <div className="w-full max-w-7xl px-4 mx-auto lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        {localizedProjects.map((project, index) => (
+          <div key={index} className={index === 0 ? "md:col-span-2 opacity-0" : "opacity-0"}>
+            <ProjectLayout {...project} featured={index === 0} />
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <motion.div
       variants={container}
       initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
+      animate="show"
       className="w-full max-w-7xl px-4 mx-auto lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
     >
       {localizedProjects.map((project, index) => (
