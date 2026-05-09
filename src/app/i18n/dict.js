@@ -374,9 +374,9 @@ export const dict = {
       linkSoon: "Link folgt",
     },
     contact: {
-      title: "Kontaktiere mich",
+      title: "Kontaktieren Sie mich",
       description:
-        "Ob du eine Frage hast, zusammenarbeiten möchtest ili samo želiš da se javiš – slobodno se javi! Uvijek sam otvoren za nove projekte, kreativne ideje ili prilike da budem dio vaše vizije. Hajde da zajedno napravimo nešto sjajno!",
+        "Ob Sie eine Frage haben, zusammenarbeiten möchten oder einfach nur Hallo sagen wollen, melden Sie sich gerne! Ich bin immer offen für neue Projekte, kreative Ideen oder Möglichkeiten, Teil Ihrer Visionen zu sein. Lassen Sie uns vernetzen und gemeinsam etwas Großartiges erschaffen!",
     },
     form: {
       placeholders: {
@@ -391,30 +391,30 @@ export const dict = {
           min: "Der Name sollte mindestens 3 Zeichen lang sein.",
         },
         email: {
-          required: "Dieses Feld je obavezno!",
+          required: "Dieses Feld ist erforderlich!",
         },
         message: {
-          required: "Dieses polje je obavezno!",
-          max: "Die Nachricht sollte manje od 500 znakova.",
-          min: "Poruka treba biti duža od 50 znakova.",
+          required: "Dieses Feld ist erforderlich!",
+          max: "Die Nachricht sollte weniger als 500 Zeichen umfassen.",
+          min: "Die Nachricht sollte mehr als 50 Zeichen umfassen.",
         },
       },
       toast: {
-        invalidEmail: "Bitte gib eine gültige E-Mail-Adresse ein, prije nego što pošalješ.",
-        sending: "Šaljem vašu poruku, molim sačekajte...",
-        error: "Došlo je do greške pri slanju, pokušajte ponovo kasnije!",
-        success: "Primio sam vašu poruku, javit ću se uskoro!",
+        invalidEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein, bevor Sie absenden.",
+        sending: "Ihre Nachricht wird gesendet, bitte warten...",
+        error: "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten, bitte versuchen Sie es später erneut!",
+        success: "Ich habe Ihre Nachricht erhalten und werde mich in Kürze bei Ihnen melden!",
       },
     },
     about: {
       hero: {
         name: "Hamza Gačić",
         title: "Softwareentwickler",
-      },  
+      },
       section: {
-        title: "Ein bisschen über meinen Werdegang i moje iskustvo",
+        title: "Ein wenig über meinen Weg und meine Erfahrung",
         paragraph:
-          "Ich bin ein leidenschaftlicher i angažirani Full-Stack-Entwickler mit über 3 Jahren Erfahrung u razvoju dinamičkih i responzivnih web aplikacija. Radim sa tehnologijama kao što su React, Node.js, Express i MongoDB, uživam u timskom radu i uvijek sam spreman na nove izazove.",
+          "Ich bin ein leidenschaftlicher und engagierter Full-Stack-Softwareentwickler mit über 3 Jahren Erfahrung in der Entwicklung dynamischer und responsiver Webanwendungen. Ich arbeite mit Technologien wie React, Node.js, Express und MongoDB, blühe in kollaborativen Umgebungen auf und genieße neue Herausforderungen.",
       },
       stats: {
         clients: "Kunden",
@@ -423,7 +423,7 @@ export const dict = {
       alt: {
         topLangs: "Top-Sprachen-Diagramm",
         stats: "GitHub-Statistiken",
-        techStack: "Technologie-Stack", 
+        techStack: "Technologie-Stack",
         streak: "GitHub-Streak-Statistiken",
         pin: {
           music: "MusicStreamingService Repository-Karte",
@@ -439,76 +439,76 @@ export const dict = {
       1: {
         name: "Una Film Distribution",
         description:
-          "Webanwendung für die Verbreitung von Filmen i Filmnachrichten. Benutzer können Filme, Trailer, Nachrichten i druge sadržaje pregledati, dok administratori upravljaju sadržajem putem kontrolne table.",
+          "Webanwendung für den Vertrieb von Filmen und Filmnachrichten. Benutzer können Filme, Trailer, Nachrichten und andere Inhalte ansehen, während Administratoren Inhalte über ein Dashboard verwalten.",
         date: "Web App",
       },
       2: {
         name: "Music Streaming Service",
         description:
-          "Mobile Musik-Streaming-App mit Fokus auf ein anpassbares Benutzererlebnis i inovativne funkcije poput offline režima.",
+          "Mobile Musik-Streaming-App mit Fokus auf ein anpassbares Benutzererlebnis mit innovativen Funktionen wie dem Offline-Modus.",
         date: "Mobile App",
       },
       3: {
         name: "Cats Defenders",
         description:
-          "Space-Invaders-Spiel in C# (Windows Forms). Steuere eine Katze, die ihr Territorium vor feindlichen Angriffen verteidigt i überlebe so lange wie möglich.",
+          "Space-Invaders-Spiel in C# (Windows Forms). Steuere eine Katze, die ihr Territorium vor feindlichen Angriffen verteidigt und überlebe so lange wie möglich.",
         date: "Spiel",
       },
       4: {
         name: "ForgeAI",
         description:
-          "Fortschrittliche Musikproduktionstechnologie, die eine intuitive Musikgenerierung mithilfe von Textabfragen i KI-Modellen mit hoher Qualität i Flexibilität ermöglicht.",
+          "Fortschrittliche Musikproduktionstechnologie, die eine intuitive Musikgenerierung mithilfe von Textabfragen und KI-Modellen mit hoher Qualität und Flexibilität ermöglicht.",
         date: "Plugin, Web App",
       },
       5: {
         name: "TrailerFlix",
         description:
-          " Web-App zum Ansehen i Organisieren von Filmtrailern, erstellt im Rahmen eines Webdesign-Kurses. Beinhaltet Suche, Anzeige, Authentifizierung i ein personalisiertes Dashboard.",
+          "Web-App zum Ansehen und Organisieren von Filmtrailern, erstellt im Rahmen eines Webdesign-Kurses. Beinhaltet Suche, Anzeige, Authentifizierung und ein personalisiertes Dashboard.",
         date: "Web App",
       },
       6: {
         name: "Audio System",
         description:
-          "Desktop-Musikplayer in C++ mit OOP-Fokus. Durchsuchen, Anhören i Verwalten lokal gespeicherter Musik wie klassische Windows-Player.",
+          "Desktop-Musikplayer, entwickelt in C++ mit OOP-Fokus. Durchsuchen, Anhören und Verwalten von lokal gespeicherter Musik wie bei klassischen Windows-Playern.",
         date: "Desktop App",
       },
       7: {
         name: "RedBullShop",
         description:
-          "E-Commerce-Web-App zum Durchstöbern von Produkten, Warenkorb, Bestellungen, Bewertungen i upravljanje korisničkim profilom (frontend + backend).",
-        date: "Web-App",
+          "E-Commerce-Web-App zum Durchsuchen von Produkten, Warenkorb, Bestellungen, Bewertungen und Benutzerprofilverwaltung (Frontend + Backend).",
+        date: "Web App",
       },
       8: {
         name: "Bewerbungssystem",
         description:
-          "Full-Stack-App zur Verwaltung von Benutzern, poslovima i recenzijama. Backend u Spring Boot, frontend u React; uključena uputstva za pokretanje.",
-        date: "Web-App",
+          "Full-Stack-App zur Verwaltung von Benutzern, Jobs und Bewertungen. Backend in Spring Boot, Frontend in React; inklusive Setup- und Ausführungsanweisungen.",
+        date: "Web App",
       },
       9: {
-        name: "End-to-End (E2E) Tests u React-Apps",
+        name: "End-to-End (E2E) Tests in React-Apps",
         description:
-          "Fokus na E2E-Tests u React-Apps mit Cypress zur Sicherstellung der Funktionalität i Benutzererfahrung u moderner Webentwicklung.",
+          "Fokus auf E2E-Tests in React-Apps mit Cypress, um Funktionalität und Benutzererfahrung in der modernen Webentwicklung sicherzustellen.",
         date: "Web-App-Tests",
       },
       10: {
         name: "Eingebettetes Smart-Car-System",
         description:
-          "Fahrzeug mit dualem MCU, Sensorfusion, Umweltüberwachung i IR-Fernbedienung.",
+          "Fahrzeug mit dualem MCU, Sensorfusion, Umweltüberwachung und IR-Fernbedienung.",
         date: "MCU",
       },
       11: {
         name: "DecibelOld",
         description:
-          "Moderne Musikplattform zum Anhören, Erstellen von Playlists, Folgen von Künstlern i Interaktionen (Kommentare/Likes) mit einfachem Benutzererlebnis.",
+          "Moderne Musikplattform zum Anhören, Erstellen von Playlists, Folgen von Künstlern und Interaktionen (Kommentare/Likes) mit einfachem Benutzererlebnis.",
         date: "Web App",
       },
-        12: {
+      12: {
         name: "Portofolio",
         description:
-          "Ein interaktives Portfolio, erstellt mit Next.js, React Three Fiber und Framer Motion. Mit 3D-Modellen, flüssigen Animationen, i18n, Kontaktformular, Hintergrundsound und reaktionsschnellem Design." ,  
+          "Ein interaktives Portfolio, erstellt mit Next.js, React Three Fiber und Framer Motion. Mit 3D-Modellen, flüssigen Animationen, i18n, Kontaktformular, Hintergrundsound und reaktionsschnellem Design.",
         date: "Web App",
+      },
     },
-  },
   },
 };
 

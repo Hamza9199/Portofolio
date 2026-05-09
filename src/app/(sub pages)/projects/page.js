@@ -10,18 +10,18 @@ const Staff = NextDynamic(() => import("@/components/models/Staff"), {
   ssr: false,
 });
 
-export default function Home() {
+export default function ProjectsPage() {
   return (
     <>
       <Image
         src={bg}
-        alt="Next.js Portfolio website's about page background image"
+        alt="Next.js Portfolio website's projects page background image"
         className="-z-50 fixed top-0 left-0 w-full h-full object-cover object-center opacity-50"
         priority
         sizes="100vw"
       />
       <ProjectList projects={projectsData} />
-      <div className="flex items-center justify-center fixed  top-20  lg:top-20  left:2 -z-10 lg:-left-0 h-screen">
+      <div className="flex items-center justify-center fixed top-20 lg:top-20 left-2 -z-10 lg:-left-0 h-screen">
         <RenderModel fit={false}>
           <Staff />
         </RenderModel>

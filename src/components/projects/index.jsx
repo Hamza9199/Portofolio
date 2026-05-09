@@ -28,7 +28,8 @@ const ProjectList = ({ projects }) => {
     <motion.div
       variants={container}
       initial="hidden"
-      animate="show"
+      whileInView="show"
+      viewport={{ once: true }}
       className="w-full max-w-7xl px-4 mx-auto lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
     >
       {localizedProjects.map((project, index) => (
