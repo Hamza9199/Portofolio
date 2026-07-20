@@ -141,7 +141,7 @@ export const BtnList = [
   { label: "Github", i18nKey: "nav.github", link: "https://github.com/Hamza9199", icon: "github", newTab: true },
   { label: "LinkedIn", i18nKey: "nav.linkedin", link: "https://www.linkedin.com/in/hamza-gacic-dev/", icon: "linkedin", newTab: true },
   { label: "Instagram", i18nKey: "nav.instagram", link: "https://www.instagram.com/hamza.1_____", icon: "instagram", newTab: true },
-  { label: "Resume", i18nKey: "nav.resume", link: "/resume.pdf", icon: "resume", newTab: true },
+  { label: "Resume", i18nKey: "nav.resume", link: "/HamzaGacic_CV.pdf", icon: "resume", newTab: true },
 ];
 
 
