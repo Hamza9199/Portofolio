@@ -131,6 +131,7 @@ export const projectsData = [
     demoLink: "https://github.com/Hamza9199/Portofolio",
     image: "/background/work.png",
   },
+  {
     id: 13,
     nameKey: "projectsData.13.name",
     descriptionKey: "projectsData.13.description",
