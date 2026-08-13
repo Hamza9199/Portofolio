@@ -167,6 +167,12 @@ export const dict = {
           "Interaktivni portfolio izgrađen pomoću Next.js, React Three Fiber i Framer Motion. Sadrži 3D modele, glatke animacije, i18n, kontakt formu, zvuk u pozadini i responzivni dizajn.",  
         date: "Web aplikacija",
       },
+      13: {
+        name: "Decibel",
+        description:
+          "Decibel je moderna muzička platforma koja omogućava korisnicima da otkrivaju, slušaju i upravljaju pjesmama, albumima i plejlistama, kao i da prate druge korisnike i izvođače. Projekat se sastoji od pet dijelova: backend (FastAPI + MySQL), frontend (React + Vite), mobilne aplikacije (React-native), Discord bot (Python) i desktop aplikacije (Electron).",
+        date: "Multiplatformski sistem",
+      }
     },
 
   },    
@@ -338,6 +344,13 @@ export const dict = {
           "Interactive portfolio built with Next.js, React Three Fiber, and Framer Motion. Features 3D models, smooth animations, i18n, contact form, background sound, and responsive design.",       
         date: "Web App",
     },
+    13: {
+      name: "Decibel",
+      description:
+          "Decibel is a modern music platform that allows users to discover, listen to, and manage songs, albums, and playlists, as well as follow other users and artists. The project consists of five parts: backend (FastAPI + MySQL), frontend (React + Vite), mobile applications (React-native), discord bot (Python), and desktop applications (Electron).",
+      date: "Multiplatform system",
+        
+    },
   },
 },
   de: {
@@ -507,6 +520,12 @@ export const dict = {
         description:
           "Ein interaktives Portfolio, erstellt mit Next.js, React Three Fiber und Framer Motion. Mit 3D-Modellen, flüssigen Animationen, i18n, Kontaktformular, Hintergrundsound und reaktionsschnellem Design.",
         date: "Web App",
+      },
+      13: {
+        name: "Decibel",
+        description:
+          "Decibel ist eine moderne Musikplattform, die es Benutzern ermöglicht, Songs, Alben und Playlists zu entdecken, anzuhören und zu verwalten sowie anderen Benutzern und Künstlern zu folgen. Das Projekt besteht aus fünf Teilen: Backend (FastAPI + MySQL), Frontend (React + Vite), mobilen Anwendungen (React-native), Discord-Bot (Python) und Desktop-Anwendungen (Electron).",
+        date: "Multiplattform-System",
       },
     },
   },

@@ -1,9 +1,9 @@
 export const projectsData = [
   {
     id: 1,
-    nameKey: "projectsData.1.name",
-    descriptionKey: "projectsData.1.description",
-    dateKey: "projectsData.1.date",
+    nameKey: "projectsData.13.name",
+    descriptionKey: "projectsData.13.description",
+    dateKey: "projectsData.13.date",
     name: "Decibel",
     description: "Decibel is a modern music platform that allows users to discover, listen to, and manage songs, albums, and playlists, as well as follow other users and artists. The project consists of five parts: backend (FastAPI + MySQL), frontend (React + Vite), mobile applications (React-native), discord bot (Python), and desktop applications (Electron).",
     date: "Multiplatform system",
@@ -133,9 +133,9 @@ export const projectsData = [
   },
   {
     id: 13,
-    nameKey: "projectsData.13.name",
-    descriptionKey: "projectsData.13.description",
-    dateKey: "projectsData.13.date",
+    nameKey: "projectsData.1.name",
+    descriptionKey: "projectsData.1.description",
+    dateKey: "projectsData.1.date",
     name: "Una Film Distribucija",
     description: "Web application for distributing movies and film news. Users can view movies, trailers, news and other    content, while administrators manage content via a dashboard.",
     date: "Web App",
