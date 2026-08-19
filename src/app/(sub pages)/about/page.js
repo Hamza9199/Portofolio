@@ -3,6 +3,7 @@ import bg from "../../../../public/background/about-background.png";
 import RenderModel from "@/components/RenderModel";
 import AboutDetails from "@/components/about";
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 import { RouteLoadingOverlay } from "@/components/Loading";
 
 const HatModel = dynamic(() => import("@/components/models/HatModel"), {
@@ -24,9 +25,11 @@ export default function Home() {
         className="-z-50 fixed top-0 left-0 w-full h-full object-cover object-center opacity-50"
       />
       <div className="absolute h-full w-full  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center">
-        <RenderModel fit={false}>
-          <HatModel />
-        </RenderModel>
+        <Suspense fallback={<div className="w-screen h-screen" />}>
+          <RenderModel fit={false}>
+            <HatModel />
+          </RenderModel>
+        </Suspense>
       </div>
 
       <div className="relative w-full h-screen flex flex-col items-center justify-center">
