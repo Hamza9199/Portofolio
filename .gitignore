@@ -39,3 +39,10 @@ next-env.d.ts
 .vscode/*
 .vscode/settings.json
 .vscode
+
+.agents
+.agents/*
+.agents/
+AGENTS.md
+memory.md
+skills-lock.json

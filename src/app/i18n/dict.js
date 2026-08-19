@@ -78,6 +78,9 @@ export const dict = {
       stats: {
         clients: "klijenata",
         years: "godina iskustva",
+        projects: "Projekata",
+        technologies: "Tehnologija",
+        learning: "Učenje",
       },
       alt: {
         topLangs: "Graf jezika",
@@ -86,6 +89,38 @@ export const dict = {
         streak: "GitHub streak statistika",
         pin: {
           music: "Kartica repozitorija MusicStreamingService",
+        },
+      },
+      experience: {
+        title: "Iskustvo i Put",
+        current: "Trenutno",
+        featuredProject: "Istaknuti projekat",
+        viewOnGitHub: "Pogledaj",
+      },
+      skills: {
+        frontend: "Frontend",
+        backend: "Backend",
+        devops: "DevOps & Alati",
+        other: "Ostalo",
+      },
+      experiences: {
+        exp1: {
+          year: "2025 – Sada",
+          title: "Full Stack Developer",
+          company: "Freelance / Samostalni projekti",
+          description: "Razvoj savremenih web aplikacija koristeći React, Next.js, Node.js i povezane tehnologije. Fokus na performanse, pristupačnost i korisničko iskustvo.",
+        },
+        exp2: {
+          year: "2022 – 2025",
+          title: "Software Engineer / Student",
+          company: "Razni projekti / Praksa / Obrazovanje",
+          description: "Rad na full-stack aplikacijama, API integracijama, baze podataka i testiranju. Iskustvo sa timskim radom, code review procesima i agilnom metodologijom.",
+        },
+        exp3: {
+          year: "2019 – 2022",
+          title: "Junior Developer / Student",
+          company: "Osobni projekti",
+          description: "Učenje osnova programiranja, algoritama, struktura podataka i prvih koraka u web razvoju. Izrada desktop i web aplikacija za učenje.",
         },
       },
     },
@@ -255,6 +290,9 @@ export const dict = {
       stats: {
         clients: "clients",
         years: "years of experience",
+        projects: "Projects",
+        technologies: "Technologies",
+        learning: "Learning",
       },
       alt: {
         topLangs: "Top languages chart",
@@ -263,6 +301,38 @@ export const dict = {
         streak: "GitHub streak stats",
         pin: {
           music: "MusicStreamingService repository card",
+        },
+      },
+      experience: {
+        title: "Experience & Journey",
+        current: "Current",
+        featuredProject: "Featured Project",
+        viewOnGitHub: "View",
+      },
+      skills: {
+        frontend: "Frontend",
+        backend: "Backend",
+        devops: "DevOps & Tools",
+        other: "Other",
+      },
+      experiences: {
+        exp1: {
+          year: "2025 – Present",
+          title: "Full Stack Developer",
+          company: "Freelance / Personal Projects",
+          description: "Development of modern web applications using React, Next.js, Node.js and related technologies. Focus on performance, accessibility and user experience.",
+        },
+        exp2: {
+          year: "2022 – 2025",
+          title: "Software Engineer / Student",
+          company: "Various Projects / Internship / Education",
+          description: "Work on full-stack applications, API integrations, databases and testing. Experience with teamwork, code review processes and agile methodology.",
+        },
+        exp3: {
+          year: "2019 – 2022",
+          title: "Junior Developer / Student",
+          company: "Personal Projects",
+          description: "Learning programming fundamentals, algorithms, data structures and first steps in web development. Creation of desktop and web applications for learning.",
         },
       },
     },
@@ -432,6 +502,9 @@ export const dict = {
       stats: {
         clients: "Kunden",
         years: "Jahre Erfahrung",
+        projects: "Projekte",
+        technologies: "Technologien",
+        learning: "Lernen",
       },
       alt: {
         topLangs: "Top-Sprachen-Diagramm",
@@ -440,6 +513,38 @@ export const dict = {
         streak: "GitHub-Streak-Statistiken",
         pin: {
           music: "MusicStreamingService Repository-Karte",
+        },
+      },
+      experience: {
+        title: "Erfahrung & Weg",
+        current: "Aktuell",
+        featuredProject: "Hervorgehobenes Projekt",
+        viewOnGitHub: "Auf ansehen",
+      },
+      skills: {
+        frontend: "Frontend",
+        backend: "Backend",
+        devops: "DevOps & Tools",
+        other: "Sonstiges",
+      },
+      experiences: {
+        exp1: {
+          year: "2025 – Heute",
+          title: "Full Stack Developer",
+          company: "Freelance / Persönliche Projekte",
+          description: "Entwicklung moderner Webanwendungen mit React, Next.js, Node.js und verwandten Technologien. Fokus auf Leistung, Barrierefreiheit und Benutzererfahrung.",
+        },
+        exp2: {
+          year: "2022 – 2025",
+          title: "Software Engineer / Student",
+          company: "Verschiedene Projekte / Praktikum / Ausbildung",
+          description: "Arbeit an Full-Stack-Anwendungen, API-Integrationen, Datenbanken und Tests. Erfahrung mit Teamarbeit, Code-Review-Prozessen und agiler Methodik.",
+        },
+        exp3: {
+          year: "2019 – 2022",
+          title: "Junior Developer / Student",
+          company: "Persönliche Projekte",
+          description: "Erlernen von Programmiergrundlagen, Algorithmen, Datenstrukturen und ersten Schritten in der Webentwicklung. Erstellung von Desktop- und Webanwendungen zum Lernen.",
         },
       },
     },
